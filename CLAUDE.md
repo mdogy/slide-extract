@@ -40,65 +40,66 @@ pytest --cov=slide_extract --cov-report=html
 ### Code Quality
 ```bash
 # Format code
-black slide_extract/ tests/
+black src/slide_extract/ tests/
 
 # Run linting
-pylint slide_extract/
+pylint src/slide_extract/
 
 # Run both formatting and linting
-black slide_extract/ tests/ && pylint slide_extract/
+black src/slide_extract/ tests/ && pylint src/slide_extract/
 ```
 
 ### Running the Application
 ```bash
 # Basic usage (outputs to stdout)
-slide-extract -i presentation.pdf -p slide_extract/default_prompt.md
+slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
 
 # With file output
-slide-extract -i presentation.pdf -p slide_extract/default_prompt.md -o output.md
+slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -o output.md
 
 # Verbose logging
-slide-extract -i presentation.pdf -p slide_extract/default_prompt.md -v
+slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -v
 
 # Test mode without AI
-slide-extract -i presentation.pdf -p slide_extract/default_prompt.md --no-ai
+slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai
 
 # Multiple PDFs
-slide-extract -i slide1.pdf slide2.pdf -p slide_extract/default_prompt.md -o notes.md
+slide-extract -i slide1.pdf slide2.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md
 
 # Development mode (run from source)
-python -m slide_extract.main -i presentation.pdf -p slide_extract/default_prompt.md
+python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
 ```
 
 ## Architecture
 
 ### Core Components
 
-**Main Application (`slide_extract/main.py`)**
+**Main Application (`src/slide_extract/scripts/main.py`)**
 - CLI argument parsing and application entry point
 - Coordinates all other components
 - Comprehensive error handling with graceful degradation
 - Dual logging (file + console)
 
-**PDF Processing (`slide_extract/pdf_processor.py`)**
+**PDF Processing (`src/slide_extract/core/pdf_processor.py`)**
 - Uses PyMuPDF (fitz) to extract text from PDF pages
 - Text cleaning and normalization
 - Batch processing of multiple PDFs
 - Error handling for corrupted/invalid PDFs
 
-**LLM Integration (`slide_extract/llm_client.py`)**
+**LLM Integration (`src/slide_extract/core/llm_client.py`)**
 - Unified interface for multiple LLM providers
 - Provider-specific implementations for OpenAI, Anthropic, Google AI, OpenRouter
 - Connection testing and error handling
 - Configurable parameters (temperature, max_tokens)
 
-**Note Generation (`slide_extract/note_generator.py`)**
+**Note Generation (`src/slide_extract/core/note_generator.py`)**
 - Orchestrates slide analysis using LLM client
 - Fallback to placeholder mode when AI fails
 - Structured output formatting
 - File I/O for prompts and generated notes
+- Progress indicators and streaming output for better debugging
 
-**Configuration Management (`slide_extract/config_manager.py`)**
+**Configuration Management (`src/slide_extract/core/config_manager.py`)**
 - YAML configuration loading
 - Secure API key management from `~/.slide_extract_keys.env`
 - Multiple key file locations support
@@ -110,11 +111,16 @@ python -m slide_extract.main -i presentation.pdf -p slide_extract/default_prompt
 
 **Installable CLI**: Installs as 'slide-extract' command via setup.py entry points.
 
+**Modular Structure**: Uses proper src/slide_extract layout with organized subdirectories:
+- `src/slide_extract/core/`: Core functionality (PDF processing, LLM integration, etc.)
+- `src/slide_extract/scripts/`: Main CLI script
+- `src/slide_extract/prompts/`: Default prompt templates
+
 **Security**: API keys stored outside repository in home directory with restricted permissions. Configuration validates all required fields.
 
 **Error Handling**: Each module has custom exception types (`PDFProcessingError`, `LLMError`, `NoteGenerationError`, `ConfigurationError`) with detailed error messages.
 
-**Logging**: Structured logging with both file (`script_run.log`) and console output, configurable verbosity levels.
+**Logging**: Structured logging with both file (`script_run.log`) and console output, configurable verbosity levels. Added progress indicators for LLM processing to aid debugging.
 
 ## Configuration
 

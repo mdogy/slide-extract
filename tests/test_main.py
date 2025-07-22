@@ -6,7 +6,7 @@ from pathlib import Path
 from unittest.mock import Mock, patch, MagicMock
 from io import StringIO
 
-from slide_extract.main import (
+from slide_extract.scripts.main import (
     setup_logging,
     parse_arguments,
     validate_input_files,

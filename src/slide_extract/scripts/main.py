@@ -14,12 +14,16 @@ from typing import List
 
 try:
     # When run as a module
-    from .pdf_processor import PDFProcessor, PDFProcessingError
-    from .note_generator import NoteGenerator, NoteGenerationError
-    from .config_manager import ConfigManager, ConfigurationError
-    from .llm_client import create_llm_client, LLMError
+    from ..core.pdf_processor import PDFProcessor, PDFProcessingError
+    from ..core.note_generator import NoteGenerator, NoteGenerationError
+    from ..core.config_manager import ConfigManager, ConfigurationError
+    from ..core.llm_client import create_llm_client, LLMError
 except ImportError:
     # When run directly
+    import sys
+    from pathlib import Path
+
+    sys.path.append(str(Path(__file__).parent.parent / "core"))
     from pdf_processor import PDFProcessor, PDFProcessingError
     from note_generator import NoteGenerator, NoteGenerationError
     from config_manager import ConfigManager, ConfigurationError
@@ -104,16 +108,15 @@ Examples:
         action="store_true",
         help="Enable verbose logging (DEBUG level)",
     )
-    
+
     parser.add_argument(
-        "--config", "-c",
-        help="Path to configuration file (default: config.yaml)"
+        "--config", "-c", help="Path to configuration file (default: config.yaml)"
     )
-    
+
     parser.add_argument(
         "--no-ai",
         action="store_true",
-        help="Use placeholder mode without AI (for testing)"
+        help="Use placeholder mode without AI (for testing)",
     )
 
     parser.add_argument("--version", action="version", version="%(prog)s 1.0.0")
@@ -181,23 +184,24 @@ def main() -> int:
         output_path = Path(args.output) if args.output else None
 
         # Initialize configuration
-        config_manager = ConfigManager(
-            Path(args.config) if args.config else None
-        )
-        
+        config_manager = ConfigManager(Path(args.config) if args.config else None)
+
         # Initialize LLM client if not in no-ai mode
         llm_client = None
         if not args.no_ai:
             try:
                 llm_config = config_manager.get_llm_config()
                 llm_client = create_llm_client(llm_config)
-                
+
                 # Test connection
                 logger.info("Testing LLM connection...")
                 if llm_client.test_connection():
                     model_info = llm_client.get_model_info()
-                    logger.info("LLM connection successful: %s %s", 
-                              model_info['provider'], model_info['model'])
+                    logger.info(
+                        "LLM connection successful: %s %s",
+                        model_info["provider"],
+                        model_info["model"],
+                    )
                 else:
                     logger.error("LLM connection test failed")
                     raise SlideExtractorError(
@@ -205,7 +209,7 @@ def main() -> int:
                         "Either run with --no-ai flag to use placeholders, or "
                         "follow the README instructions to set up an LLM API key."
                     )
-                    
+
             except (ConfigurationError, LLMError) as e:
                 logger.error("LLM initialization failed: %s", e)
                 raise SlideExtractorError(
@@ -215,7 +219,7 @@ def main() -> int:
                 ) from e
         else:
             logger.info("Running in no-AI mode (placeholder only)")
-                
+
         # Initialize processors
         pdf_processor = PDFProcessor()
         note_generator = NoteGenerator(llm_client)
@@ -254,8 +258,13 @@ def main() -> int:
 
         return 0
 
-    except (SlideExtractorError, PDFProcessingError, NoteGenerationError, 
-            ConfigurationError, LLMError) as e:
+    except (
+        SlideExtractorError,
+        PDFProcessingError,
+        NoteGenerationError,
+        ConfigurationError,
+        LLMError,
+    ) as e:
         logger = logging.getLogger(__name__)
         logger.error(f"Application error: {e}")
         return 1

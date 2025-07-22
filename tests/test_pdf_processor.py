@@ -4,7 +4,7 @@ import pytest
 from pathlib import Path
 from unittest.mock import Mock, patch, mock_open
 
-from slide_extract.pdf_processor import PDFProcessor, PDFProcessingError
+from slide_extract.core.pdf_processor import PDFProcessor, PDFProcessingError
 
 
 class TestPDFProcessor:

@@ -4,7 +4,7 @@ import pytest
 from pathlib import Path
 from unittest.mock import Mock, patch, mock_open
 
-from slide_extract.note_generator import NoteGenerator, NoteGenerationError
+from slide_extract.core.note_generator import NoteGenerator, NoteGenerationError
 
 
 class TestNoteGenerator:

@@ -21,7 +21,8 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/YOUR_USERNAME/slide-extract",
-    packages=find_packages(),
+    packages=find_packages("src"),
+    package_dir={"": "src"},
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
@@ -42,12 +43,12 @@ setup(
     install_requires=requirements,
     entry_points={
         "console_scripts": [
-            "slide-extract=slide_extract.main:main",
+            "slide-extract=slide_extract.scripts.main:main",
         ],
     },
     include_package_data=True,
     package_data={
-        "slide_extract": ["*.md", "*.yaml"],
+        "slide_extract": ["prompts/*.md", "*.yaml"],
     },
     zip_safe=False,
 )

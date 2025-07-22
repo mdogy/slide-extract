@@ -21,7 +21,7 @@ class NoteGenerator:
 
     def __init__(self, llm_client: Optional[LLMClient] = None):
         """Initialize the note generator.
-        
+
         Args:
             llm_client: LLM client for AI-powered note generation
         """
@@ -55,7 +55,9 @@ class NoteGenerator:
             if not content:
                 raise NoteGenerationError(f"Prompt file is empty: {prompt_file}")
 
-            logger.info("Loaded prompt from %s (%d characters)", prompt_file, len(content))
+            logger.info(
+                "Loaded prompt from %s (%d characters)", prompt_file, len(content)
+            )
             return content
 
         except IOError as e:
@@ -76,7 +78,7 @@ class NoteGenerator:
 
         Returns:
             Generated speaker notes as a formatted string
-            
+
         Raises:
             NoteGenerationError: If AI generation fails
         """
@@ -85,32 +87,42 @@ class NoteGenerator:
         if self.use_ai and self.llm_client:
             try:
                 # Use AI to generate comprehensive notes
+                logger.info("Requesting AI analysis for slide %d...", slide_number)
                 ai_response = self.llm_client.generate_slide_analysis(
                     slide_text, prompt, slide_number
                 )
+                logger.info(
+                    "AI analysis completed for slide %d (%d chars)",
+                    slide_number,
+                    len(ai_response),
+                )
                 notes = ai_response + "\n---\n\n"
-                
+
             except LLMError as e:
                 logger.error("AI generation failed for slide %d: %s", slide_number, e)
                 # Fallback to placeholder format
-                notes = self._generate_placeholder_notes(slide_number, slide_text, prompt)
-                
+                notes = self._generate_placeholder_notes(
+                    slide_number, slide_text, prompt
+                )
+
         else:
             # Use placeholder implementation
             notes = self._generate_placeholder_notes(slide_number, slide_text, prompt)
 
         self.generated_notes.append(notes)
         return notes
-        
-    def _generate_placeholder_notes(self, slide_number: int, slide_text: str, prompt: str) -> str:
+
+    def _generate_placeholder_notes(
+        self, slide_number: int, slide_text: str, prompt: str
+    ) -> str:
         """
         Generate placeholder notes in the expected format.
-        
+
         Args:
             slide_number: The slide number
             slide_text: The slide text content
             prompt: The analysis prompt
-            
+
         Returns:
             Formatted placeholder notes
         """
@@ -126,9 +138,6 @@ class NoteGenerator:
             f'"[AI-generated narration not available - placeholder mode]"\n\n'
             f"---\n\n"
         )
-
-        self.generated_notes.append(notes)
-        return notes
 
     def generate_notes_for_pdf(
         self, pdf_path: str, page_texts: Dict[int, str], prompt: str
@@ -174,7 +183,12 @@ class NoteGenerator:
         Returns:
             Combined notes for all PDFs as a single string
         """
-        logger.info("Generating notes for %d PDF files", len(pdf_data))
+        total_slides = sum(len(page_texts) for page_texts in pdf_data.values())
+        logger.info(
+            "Generating notes for %d PDF files (%d total slides)",
+            len(pdf_data),
+            total_slides,
+        )
 
         all_notes = []
 

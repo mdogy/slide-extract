@@ -51,7 +51,9 @@ class PDFProcessor:
         try:
             doc = fitz.open(str(pdf_path))
         except Exception as open_error:
-            raise PDFProcessingError(f"Failed to open PDF {pdf_path}: {str(open_error)}") from open_error
+            raise PDFProcessingError(
+                f"Failed to open PDF {pdf_path}: {str(open_error)}"
+            ) from open_error
 
         page_texts = {}
 
@@ -76,7 +78,9 @@ class PDFProcessor:
             doc.close()
 
         self.processed_files.append(str(pdf_path))
-        logger.info("Successfully processed %d pages from %s", len(page_texts), pdf_path)
+        logger.info(
+            "Successfully processed %d pages from %s", len(page_texts), pdf_path
+        )
 
         return page_texts
 
@@ -118,7 +122,7 @@ class PDFProcessor:
             Cleaned text
         """
         import re
-        
+
         if not text:
             return ""
 
