@@ -44,9 +44,10 @@ This Python CLI tool processes PDF presentation slides and generates speaker not
    source venv/bin/activate
    ```
 
-3. **Install dependencies**
+3. **Install the package**
    ```bash
-   pip install -r requirements.txt
+   # Install dependencies and the CLI tool in development mode
+   pip install -e .
    ```
 
 ## LLM Configuration and API Keys
@@ -152,10 +153,10 @@ Or uncomment one of the pre-configured options in `config.yaml`:
 
 ### Command Line Interface
 
-The script provides a comprehensive CLI with the following options:
+The tool provides a comprehensive CLI with the following options:
 
 ```bash
-python src/main.py [OPTIONS]
+slide-extract [OPTIONS]
 ```
 
 ### Arguments
@@ -174,37 +175,37 @@ python src/main.py [OPTIONS]
 
 1. **Basic AI-powered analysis with default configuration:**
    ```bash
-   python src/main.py -i presentation.pdf -p src/default_prompt.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
    ```
 
 2. **Process multiple PDFs with file output:**
    ```bash
-   python src/main.py -i slide1.pdf slide2.pdf slide3.pdf -p src/default_prompt.md -o notes.md
+   slide-extract -i slide1.pdf slide2.pdf slide3.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md
    ```
 
 3. **Use custom configuration file:**
    ```bash
-   python src/main.py -i presentation.pdf -p src/default_prompt.md -c my_config.yaml -o notes.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -c my_config.yaml -o notes.md
    ```
 
 4. **Enable verbose logging:**
    ```bash
-   python src/main.py -i presentation.pdf -p src/default_prompt.md -v -o detailed_notes.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -v -o detailed_notes.md
    ```
 
 5. **Test mode without AI (placeholder mode):**
    ```bash
-   python src/main.py -i presentation.pdf -p src/default_prompt.md --no-ai -o test_notes.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_notes.md
    ```
 
 6. **Using long-form arguments:**
    ```bash
-   python src/main.py --input presentation.pdf --prompt src/default_prompt.md --output notes.md --verbose
+   slide-extract --input presentation.pdf --prompt src/slide_extract/prompts/default_prompt.md --output notes.md --verbose
    ```
 
 ### Using the Default Prompt
 
-The tool includes a comprehensive default prompt at `src/default_prompt.md` that instructs the AI to generate:
+The tool includes a comprehensive default prompt at `src/slide_extract/prompts/default_prompt.md` that instructs the AI to generate:
 
 - **Slide Text**: Exact transcription of slide content
 - **Images/Diagrams**: Detailed descriptions of visual elements
@@ -274,18 +275,31 @@ SLIDE CONTENT: Supervised Learning
 ```
 slide-extract/
 ├── src/
-│   ├── __init__.py
-│   ├── main.py              # Main CLI script and argument parsing
-│   ├── pdf_processor.py     # PDF text extraction functionality
-│   └── note_generator.py    # Note generation logic (placeholder implementation)
-├── tests/
+│   └── slide_extract/
+│       ├── __init__.py
+│       ├── core/                    # Core functionality modules
+│       │   ├── __init__.py
+│       │   ├── config_manager.py    # Configuration and API key management
+│       │   ├── llm_client.py        # LLM provider integrations
+│       │   ├── note_generator.py    # Note generation logic
+│       │   └── pdf_processor.py     # PDF text extraction functionality
+│       ├── scripts/                 # CLI entry point
+│       │   ├── __init__.py
+│       │   └── main.py              # Main CLI script and argument parsing
+│       └── prompts/                 # Default prompt templates
+│           ├── __init__.py
+│           └── default_prompt.md    # Default analysis prompt
+├── tests/                           # Test suite
 │   ├── __init__.py
 │   ├── test_main.py
 │   ├── test_pdf_processor.py
 │   └── test_note_generator.py
+├── config.yaml                      # LLM configuration
+├── setup.py                         # Package installation script
+├── requirements.txt                 # Python dependencies
 ├── .gitignore
 ├── README.md
-└── requirements.txt
+└── CLAUDE.md                        # Development instructions for Claude
 ```
 
 ### Code Quality Tools
@@ -306,7 +320,7 @@ The project uses several tools to maintain code quality:
 
 2. **Run tests with coverage report:**
    ```bash
-   pytest --cov=src --cov-report=html --cov-report=term
+   pytest --cov=slide_extract --cov-report=html --cov-report=term
    ```
 
 3. **Run specific test file:**
@@ -316,7 +330,7 @@ The project uses several tools to maintain code quality:
 
 4. **Generate detailed coverage report:**
    ```bash
-   pytest --cov=src --cov-report=html
+   pytest --cov=slide_extract --cov-report=html
    # Open htmlcov/index.html in your browser
    ```
 
@@ -324,17 +338,17 @@ The project uses several tools to maintain code quality:
 
 1. **Format code with black:**
    ```bash
-   black src/ tests/
+   black src/slide_extract/ tests/
    ```
 
 2. **Run pylint checks:**
    ```bash
-   pylint src/
+   pylint src/slide_extract/
    ```
 
 3. **Run both formatting and linting:**
    ```bash
-   black src/ tests/ && pylint src/
+   black src/slide_extract/ tests/ && pylint src/slide_extract/
    ```
 
 ## Testing Instructions
@@ -363,7 +377,7 @@ The project includes a comprehensive test suite with the following coverage:
 
 2. **Generate coverage report**:
    ```bash
-   pytest --cov=src --cov-report=term-missing --cov-report=html
+   pytest --cov=slide_extract --cov-report=term-missing --cov-report=html
    ```
 
 3. **View detailed HTML report**:
@@ -491,7 +505,7 @@ This project is provided as-is for educational and development purposes.
 You can test the tool without setting up API keys:
 
 ```bash
-python src/main.py -i presentation.pdf -p src/default_prompt.md --no-ai -o test_output.md
+slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_output.md
 ```
 
 This runs in placeholder mode and generates formatted output without AI analysis.
