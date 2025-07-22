@@ -60,3 +60,11 @@ dmypy.json
 # OS
 .DS_Store
 Thumbs.db
+
+# API Keys and sensitive files
+.slide_extract_keys.env*
+*_keys.env*
+
+# Application-specific
+script_run.log
+test_output*.md
