@@ -10,6 +10,9 @@ This Python CLI tool processes PDF presentation slides and generates speaker not
 
 - **AI-Powered Analysis**: Uses advanced LLM models (GPT, Claude, Gemini) for intelligent slide analysis
 - **Multiple LLM Support**: Compatible with OpenAI, Anthropic, Google AI, and OpenRouter
+- **Resume Capability**: Comprehensive progress tracking with slide-level checkpointing for interrupted processing
+- **Batch Directory Processing**: Process entire directories of PDFs with manifest-based progress tracking
+- **Multi-Modal Processing**: Extract both text and visual content from PDF slides
 - **PDF Processing**: Extract text content from each page of PDF presentation files
 - **Prompt Integration**: Load custom generation prompts from Markdown files
 - **Flexible Output**: Direct output to stdout or save to specified files
@@ -151,21 +154,50 @@ Or uncomment one of the pre-configured options in `config.yaml`:
 
 ## Usage
 
-### Command Line Interface
+This package provides two powerful CLI commands for different use cases:
 
-The tool provides a comprehensive CLI with the following options:
+### 1. Single File Processing: `slide-extract`
+
+Process one or more PDF files and generate a single output file with resume capability:
 
 ```bash
 slide-extract [OPTIONS]
 ```
 
-### Arguments
+#### Arguments
 
 | Argument | Short | Required | Description |
 |----------|-------|----------|-------------|
 | `--input` | `-i` | Yes | Path(s) to input PDF slide deck files |
 | `--prompt` | `-p` | Yes | Path to Markdown file containing the generation prompt |
 | `--output` | `-o` | No | Path to output Markdown file (default: stdout) |
+| `--resume` | | No | Resume from previous interrupted processing |
+| `--clean-start` | | No | Ignore any existing progress and start fresh |
+| `--config` | `-c` | No | Path to configuration file (default: config.yaml) |
+| `--verbose` | `-v` | No | Enable verbose logging (DEBUG level) |
+| `--no-ai` | | No | Use placeholder mode without AI (for testing) |
+| `--version` | | No | Show version information |
+
+### 2. Batch Directory Processing: `slide-dir-extract`
+
+Process all PDF files in a directory with comprehensive progress tracking and resume capability:
+
+```bash
+slide-dir-extract [OPTIONS]
+```
+
+#### Arguments
+
+| Argument | Short | Required | Description |
+|----------|-------|----------|-------------|
+| `--input-dir` | `-i` | Yes | Directory containing PDF presentation files |
+| `--prompt` | `-p` | Yes | Path to Markdown file containing the generation prompt |
+| `--output-dir` | `-o` | No | Output directory for generated files (default: current directory) |
+| `--suffix` | | No | Output filename suffix (default: '_summary') |
+| `--extension` | | No | Output file extension (default: '.md') |
+| `--resume` | | No | Resume from previous interrupted batch processing |
+| `--clean-start` | | No | Ignore existing progress and start fresh |
+| `--show-status` | | No | Show current processing status and exit |
 | `--config` | `-c` | No | Path to configuration file (default: config.yaml) |
 | `--verbose` | `-v` | No | Enable verbose logging (DEBUG level) |
 | `--no-ai` | | No | Use placeholder mode without AI (for testing) |
@@ -173,39 +205,92 @@ slide-extract [OPTIONS]
 
 ### Usage Examples
 
-1. **Basic AI-powered analysis with default configuration:**
+#### Single File Processing (`slide-extract`)
+
+1. **Basic AI-powered analysis:**
    ```bash
-   # Using the CLI command (if environment is properly configured)
    slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
-   
-   # Alternative: Using Python module directly (recommended)
-   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
    ```
 
 2. **Process multiple PDFs with file output:**
    ```bash
-   python -m slide_extract.scripts.main -i slide1.pdf slide2.pdf slide3.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md
+   slide-extract -i slide1.pdf slide2.pdf slide3.pdf -p src/slide_extract/prompts/default_prompt.md -o combined_notes.md
    ```
 
-3. **Use custom configuration file:**
+3. **Resume interrupted processing:**
    ```bash
-   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -c my_config.yaml -o notes.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md --resume
    ```
 
-4. **Enable verbose logging:**
+4. **Start fresh (ignore previous progress):**
    ```bash
-   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -v -o detailed_notes.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md --clean-start
    ```
 
-5. **Test mode without AI (placeholder mode):**
+5. **Test mode without AI:**
    ```bash
-   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_notes.md
+   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_notes.md
    ```
 
-6. **Using long-form arguments:**
+#### Batch Directory Processing (`slide-dir-extract`)
+
+1. **Process all PDFs in a directory:**
    ```bash
-   python -m slide_extract.scripts.main --input presentation.pdf --prompt src/slide_extract/prompts/default_prompt.md --output notes.md --verbose
+   slide-dir-extract -i ./presentations -p src/slide_extract/prompts/default_prompt.md
    ```
+
+2. **Process with custom output directory and naming:**
+   ```bash
+   slide-dir-extract -i ./pdfs -p src/slide_extract/prompts/default_prompt.md -o ./outputs --suffix "_notes" --extension ".txt"
+   ```
+
+3. **Resume interrupted batch processing:**
+   ```bash
+   slide-dir-extract -i ./presentations -p src/slide_extract/prompts/default_prompt.md --resume
+   ```
+
+4. **Check processing status:**
+   ```bash
+   slide-dir-extract -i ./presentations -p src/slide_extract/prompts/default_prompt.md --show-status
+   ```
+
+5. **Start fresh batch processing:**
+   ```bash
+   slide-dir-extract -i ./presentations -p src/slide_extract/prompts/default_prompt.md --clean-start
+   ```
+
+6. **Verbose batch processing:**
+   ```bash
+   slide-dir-extract -i ./presentations -p src/slide_extract/prompts/default_prompt.md -o ./outputs -v
+   ```
+
+### Progress Tracking and Resume Capability
+
+Both commands feature robust progress tracking with slide-level checkpointing:
+
+#### Single File Processing
+- **Progress Files**: `.slide_extract_progress_[filename].json` tracks completion status
+- **Resume Support**: Automatically detects interrupted processing and offers resume
+- **Validation**: Ensures completed slides are valid before marking as done
+
+#### Batch Directory Processing  
+- **Manifest File**: `.slide_dir_extract_manifest.txt` tracks all files and their status
+- **File Status Tracking**: `PENDING`, `IN_PROGRESS`, `COMPLETED`, `ERROR`, `SKIPPED`
+- **Progress Summary**: Shows overall completion percentage and detailed status
+- **Individual File Resume**: Each file can be resumed independently
+
+#### Progress File Locations
+- **Single files**: Same directory as output file
+- **Batch processing**: Output directory specified with `--output-dir`
+
+#### Status Checking
+```bash
+# Check batch processing status
+slide-dir-extract -i ./presentations -p prompt.md --show-status
+
+# View detailed manifest
+cat .slide_dir_extract_manifest.txt
+```
 
 ### Using the Default Prompt
 
@@ -274,36 +359,89 @@ SLIDE CONTENT: Supervised Learning
 
 ## Development
 
-### Project Structure
+### Enhanced Project Structure
 
 ```
 slide-extract/
 ├── src/
 │   └── slide_extract/
 │       ├── __init__.py
+│       ├── cli/                     # CLI command implementations
+│       │   ├── __init__.py
+│       │   ├── common.py            # Shared CLI utilities
+│       │   ├── single.py            # Single file processing CLI
+│       │   └── batch.py             # Batch directory processing CLI
 │       ├── core/                    # Core functionality modules
 │       │   ├── __init__.py
+│       │   ├── batch_processor.py   # Directory batch processing
 │       │   ├── config_manager.py    # Configuration and API key management
+│       │   ├── file_manager.py      # File operations and utilities
 │       │   ├── llm_client.py        # LLM provider integrations
-│       │   ├── note_generator.py    # Note generation logic
-│       │   └── pdf_processor.py     # PDF text extraction functionality
-│       ├── scripts/                 # CLI entry point
-│       │   ├── __init__.py
-│       │   └── main.py              # Main CLI script and argument parsing
+│       │   ├── manifest_manager.py  # Batch processing progress tracking
+│       │   ├── note_generator.py    # Note generation with resume capability
+│       │   ├── pdf_processor.py     # PDF text extraction functionality
+│       │   └── progress_manager.py  # Single file progress tracking
 │       └── prompts/                 # Default prompt templates
 │           ├── __init__.py
 │           └── default_prompt.md    # Default analysis prompt
-├── tests/                           # Test suite
+├── tests/                           # Comprehensive test suite
 │   ├── __init__.py
-│   ├── test_main.py
-│   ├── test_pdf_processor.py
-│   └── test_note_generator.py
+│   ├── conftest.py                  # Pytest configuration and fixtures
+│   ├── fixtures/                    # Test data and reusable fixtures
+│   │   ├── configs/                 # Test configuration files
+│   │   ├── prompts/                 # Test prompt files
+│   │   └── sample_slides/           # Sample PDF files for testing
+│   ├── integration/                 # Integration tests
+│   │   ├── test_batch_cli_complete.py
+│   │   └── test_single_cli_complete.py
+│   └── unit/                        # Unit tests
+│       ├── cli/                     # CLI-specific tests
+│       └── core/                    # Core module tests
 ├── config.yaml                      # LLM configuration
-├── setup.py                         # Package installation script
-├── requirements.txt                 # Python dependencies
+├── setup.py                         # Enhanced package installation with custom commands
+├── requirements.txt                 # Runtime dependencies
+├── requirements-dev.txt             # Development dependencies
 ├── .gitignore
 ├── README.md
 └── CLAUDE.md                        # Development instructions for Claude
+```
+
+### Enhanced Setup Commands
+
+The project includes custom setup.py commands for development:
+
+#### Clean Command
+```bash
+# Remove all temporary files, logs, outputs, and build artifacts
+python setup.py clean
+
+# Selective cleaning
+python setup.py clean --logs        # Remove only log files
+python setup.py clean --outputs     # Remove only generated output files  
+python setup.py clean --build       # Remove only build artifacts
+```
+
+#### Test Command
+```bash
+# Run comprehensive test suite
+python setup.py test
+
+# Run with options
+python setup.py test --unit         # Unit tests only
+python setup.py test --integration  # Integration tests only
+python setup.py test --coverage     # With coverage report
+python setup.py test --verbose      # Verbose output
+```
+
+### Development Dependencies
+
+Install development tools:
+```bash
+# Install development dependencies
+pip install -r requirements-dev.txt
+
+# Or install with extras
+pip install -e ".[dev]"
 ```
 
 ### Code Quality Tools

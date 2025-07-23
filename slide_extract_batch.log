@@ -1,0 +1,633 @@
+2025-07-23 21:54:21,194 - slide_extract.cli.common - INFO - Logging initialized at 10 level
+2025-07-23 21:54:21,194 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 21:54:21,194 - slide_extract.cli.batch - DEBUG - Arguments: Namespace(input_dir='tests/fixtures/sample_slides', output_dir=None, suffix='_summary', extension='.md', resume=False, clean_start=False, show_status=False, prompt='src/slide_extract/default_prompt.md', config=None, verbose=True, no_ai=True)
+2025-07-23 21:54:21,194 - slide_extract.cli.batch - ERROR - Batch processing error: Prompt file not found: src/slide_extract/default_prompt.md
+2025-07-23 21:54:26,605 - slide_extract.cli.common - INFO - Logging initialized at 10 level
+2025-07-23 21:54:26,606 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 21:54:26,606 - slide_extract.cli.batch - DEBUG - Arguments: Namespace(input_dir='tests/fixtures/sample_slides', output_dir=None, suffix='_summary', extension='.md', resume=False, clean_start=False, show_status=False, prompt='tests/fixtures/prompts/basic_prompt.md', config=None, verbose=True, no_ai=True)
+2025-07-23 21:54:26,607 - slide_extract.core.file_manager - INFO - Loaded prompt from tests/fixtures/prompts/basic_prompt.md (302 characters)
+2025-07-23 21:54:26,607 - slide_extract.cli.common - INFO - Running in no-AI mode (placeholder only)
+2025-07-23 21:54:26,607 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slides -> /Users/michael/Documents/dev/slide-extract
+2025-07-23 21:54:26,607 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-23 21:54:26,607 - slide_extract.core.file_manager - INFO - Discovered 2 PDF files in tests/fixtures/sample_slides
+2025-07-23 21:54:26,608 - slide_extract.core.manifest_manager - INFO - Initialized manifest with 2 files
+2025-07-23 21:54:26,608 - slide_extract.core.batch_processor - INFO - Initialized new batch processing for 2 files
+2025-07-23 21:54:26,608 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:26,608 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 2, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:54:26,608 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:26,608 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:26,608 - slide_extract.core.batch_processor - INFO - Processing 2 files...
+2025-07-23 21:54:26,608 - slide_extract.core.batch_processor - INFO - Processing 1/2: M01_23_08_31_A_Intro.pdf
+2025-07-23 21:54:26,608 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:26,608 - slide_extract.core.manifest_manager - DEBUG - Updated M01_23_08_31_A_Intro.pdf: IN_PROGRESS
+2025-07-23 21:54:26,608 - slide_extract.core.batch_processor - DEBUG - Extracting content from tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf
+2025-07-23 21:54:26,608 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf
+2025-07-23 21:54:26,621 - slide_extract.core.pdf_processor - DEBUG - Extracted 91 characters from page 1
+2025-07-23 21:54:26,624 - slide_extract.core.pdf_processor - DEBUG - Found 5 images and 6 drawings on slide 1
+2025-07-23 21:54:27,055 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:27,056 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:27,056 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 214456
+2025-07-23 21:54:27,107 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (299204 bytes)
+2025-07-23 21:54:27,108 - slide_extract.core.pdf_processor - DEBUG - Extracted 83 characters from page 2
+2025-07-23 21:54:27,109 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 5 drawings on slide 2
+2025-07-23 21:54:27,172 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:27,173 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:27,173 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 67106
+2025-07-23 21:54:27,198 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (98568 bytes)
+2025-07-23 21:54:27,199 - slide_extract.core.pdf_processor - DEBUG - Extracted 68 characters from page 3
+2025-07-23 21:54:27,199 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 3 drawings on slide 3
+2025-07-23 21:54:27,340 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:27,340 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:27,340 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 4527510
+2025-07-23 21:54:27,454 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (3894808 bytes)
+2025-07-23 21:54:27,455 - slide_extract.core.pdf_processor - DEBUG - Extracted 29 characters from page 4
+2025-07-23 21:54:27,455 - slide_extract.core.pdf_processor - DEBUG - Found 4 images and 2 drawings on slide 4
+2025-07-23 21:54:27,535 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:27,536 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:27,536 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 986197
+2025-07-23 21:54:27,586 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (1002348 bytes)
+2025-07-23 21:54:27,587 - slide_extract.core.pdf_processor - DEBUG - Extracted 3 characters from page 5
+2025-07-23 21:54:27,587 - slide_extract.core.pdf_processor - DEBUG - Found 0 images and 2 drawings on slide 5
+2025-07-23 21:54:27,627 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:27,628 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:27,628 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 20919
+2025-07-23 21:54:27,647 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (27696 bytes)
+2025-07-23 21:54:27,648 - slide_extract.core.pdf_processor - DEBUG - Extracted 68 characters from page 6
+2025-07-23 21:54:27,651 - slide_extract.core.pdf_processor - DEBUG - Found 3 images and 4 drawings on slide 6
+2025-07-23 21:54:27,844 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:27,845 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:27,845 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 2307867
+2025-07-23 21:54:27,945 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (2173788 bytes)
+2025-07-23 21:54:27,946 - slide_extract.core.pdf_processor - DEBUG - Extracted 56 characters from page 7
+2025-07-23 21:54:27,947 - slide_extract.core.pdf_processor - DEBUG - Found 8 images and 2 drawings on slide 7
+2025-07-23 21:54:28,152 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,152 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,152 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 3650513
+2025-07-23 21:54:28,283 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (3214624 bytes)
+2025-07-23 21:54:28,284 - slide_extract.core.pdf_processor - DEBUG - Extracted 142 characters from page 8
+2025-07-23 21:54:28,284 - slide_extract.core.pdf_processor - DEBUG - Found 2 images and 2 drawings on slide 8
+2025-07-23 21:54:28,366 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,367 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,367 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 697293
+2025-07-23 21:54:28,419 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (636952 bytes)
+2025-07-23 21:54:28,420 - slide_extract.core.pdf_processor - DEBUG - Extracted 20 characters from page 9
+2025-07-23 21:54:28,420 - slide_extract.core.pdf_processor - DEBUG - Found 2 images and 3 drawings on slide 9
+2025-07-23 21:54:28,534 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,534 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,534 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 2668125
+2025-07-23 21:54:28,633 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (2010160 bytes)
+2025-07-23 21:54:28,634 - slide_extract.core.pdf_processor - DEBUG - Extracted 72 characters from page 10
+2025-07-23 21:54:28,634 - slide_extract.core.pdf_processor - DEBUG - Found 0 images and 2 drawings on slide 10
+2025-07-23 21:54:28,673 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,673 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,673 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 36648
+2025-07-23 21:54:28,693 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (51460 bytes)
+2025-07-23 21:54:28,694 - slide_extract.core.pdf_processor - DEBUG - Extracted 21 characters from page 11
+2025-07-23 21:54:28,694 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 11
+2025-07-23 21:54:28,777 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,777 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,777 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 573017
+2025-07-23 21:54:28,828 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (551336 bytes)
+2025-07-23 21:54:28,829 - slide_extract.core.pdf_processor - DEBUG - Extracted 60 characters from page 12
+2025-07-23 21:54:28,830 - slide_extract.core.pdf_processor - DEBUG - Found 3 images and 2 drawings on slide 12
+2025-07-23 21:54:28,885 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,885 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,885 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 416159
+2025-07-23 21:54:28,917 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (466156 bytes)
+2025-07-23 21:54:28,918 - slide_extract.core.pdf_processor - DEBUG - Extracted 48 characters from page 13
+2025-07-23 21:54:28,918 - slide_extract.core.pdf_processor - DEBUG - Found 0 images and 3 drawings on slide 13
+2025-07-23 21:54:28,957 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:28,957 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:28,957 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 26406
+2025-07-23 21:54:28,975 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (37224 bytes)
+2025-07-23 21:54:28,976 - slide_extract.core.pdf_processor - DEBUG - Extracted 133 characters from page 14
+2025-07-23 21:54:28,977 - slide_extract.core.pdf_processor - DEBUG - Found 3 images and 2 drawings on slide 14
+2025-07-23 21:54:29,035 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,035 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,035 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 511546
+2025-07-23 21:54:29,072 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (554948 bytes)
+2025-07-23 21:54:29,073 - slide_extract.core.pdf_processor - DEBUG - Extracted 34 characters from page 15
+2025-07-23 21:54:29,073 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 15
+2025-07-23 21:54:29,148 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,148 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,148 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 1144703
+2025-07-23 21:54:29,213 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (874364 bytes)
+2025-07-23 21:54:29,214 - slide_extract.core.pdf_processor - DEBUG - Extracted 48 characters from page 16
+2025-07-23 21:54:29,214 - slide_extract.core.pdf_processor - DEBUG - Found 0 images and 3 drawings on slide 16
+2025-07-23 21:54:29,253 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,253 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,253 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 23708
+2025-07-23 21:54:29,272 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (33452 bytes)
+2025-07-23 21:54:29,272 - slide_extract.core.pdf_processor - DEBUG - Extracted 25 characters from page 17
+2025-07-23 21:54:29,273 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 17
+2025-07-23 21:54:29,355 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,355 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,355 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 1090901
+2025-07-23 21:54:29,401 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (1137364 bytes)
+2025-07-23 21:54:29,404 - slide_extract.core.pdf_processor - DEBUG - Extracted 2296 characters from page 18
+2025-07-23 21:54:29,406 - slide_extract.core.pdf_processor - DEBUG - Found 0 images and 2 drawings on slide 18
+2025-07-23 21:54:29,458 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,458 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,458 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 218094
+2025-07-23 21:54:29,492 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (311120 bytes)
+2025-07-23 21:54:29,493 - slide_extract.core.pdf_processor - DEBUG - Extracted 58 characters from page 19
+2025-07-23 21:54:29,493 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 19
+2025-07-23 21:54:29,545 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,545 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,545 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 232081
+2025-07-23 21:54:29,578 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (269520 bytes)
+2025-07-23 21:54:29,579 - slide_extract.core.pdf_processor - DEBUG - Extracted 33 characters from page 20
+2025-07-23 21:54:29,579 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 20
+2025-07-23 21:54:29,637 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,637 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,637 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 339289
+2025-07-23 21:54:29,676 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (430436 bytes)
+2025-07-23 21:54:29,677 - slide_extract.core.pdf_processor - DEBUG - Extracted 10 characters from page 21
+2025-07-23 21:54:29,677 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 21
+2025-07-23 21:54:29,747 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,747 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,747 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 269484
+2025-07-23 21:54:29,785 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (300240 bytes)
+2025-07-23 21:54:29,786 - slide_extract.core.pdf_processor - DEBUG - Extracted 31 characters from page 22
+2025-07-23 21:54:29,786 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 22
+2025-07-23 21:54:29,840 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,840 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,840 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 294880
+2025-07-23 21:54:29,873 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (291776 bytes)
+2025-07-23 21:54:29,873 - slide_extract.core.pdf_processor - DEBUG - Extracted 17 characters from page 23
+2025-07-23 21:54:29,873 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 23
+2025-07-23 21:54:29,947 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:29,947 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:29,948 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 290720
+2025-07-23 21:54:29,984 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (322168 bytes)
+2025-07-23 21:54:29,984 - slide_extract.core.pdf_processor - DEBUG - Extracted 74 characters from page 24
+2025-07-23 21:54:29,985 - slide_extract.core.pdf_processor - DEBUG - Found 6 images and 12 drawings on slide 24
+2025-07-23 21:54:30,053 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:30,053 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:30,053 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 742780
+2025-07-23 21:54:30,097 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (852484 bytes)
+2025-07-23 21:54:30,098 - slide_extract.core.pdf_processor - DEBUG - Extracted 2 characters from page 25
+2025-07-23 21:54:30,098 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 25
+2025-07-23 21:54:30,370 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:30,371 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:30,371 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 1161109
+2025-07-23 21:54:30,449 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (1360020 bytes)
+2025-07-23 21:54:30,450 - slide_extract.core.pdf_processor - INFO - Successfully processed 25 slides from tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf (25 with visual content, 120 total visual elements)
+2025-07-23 21:54:30,450 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:30,451 - slide_extract.core.manifest_manager - DEBUG - Updated M01_23_08_31_A_Intro.pdf: IN_PROGRESS
+2025-07-23 21:54:30,451 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 25 total slides
+2025-07-23 21:54:30,451 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-23 21:54:30,451 - slide_extract.core.note_generator - WARNING - Slide 1 narration too short
+2025-07-23 21:54:30,451 - slide_extract.core.note_generator - ERROR - Failed to generate analysis for slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:30,451 - slide_extract.core.progress_manager - ERROR - Recorded error for slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:30,451 - slide_extract.core.note_generator - ERROR - Critical error during processing: Failed to process slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:30,451 - slide_extract.core.batch_processor - ERROR - Processing error for M01_23_08_31_A_Intro.pdf: Failed to process slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:30,451 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:30,451 - slide_extract.core.manifest_manager - DEBUG - Updated M01_23_08_31_A_Intro.pdf: ERROR
+2025-07-23 21:54:30,452 - slide_extract.core.batch_processor - ERROR - ✗ Failed M01_23_08_31_A_Intro.pdf
+2025-07-23 21:54:30,452 - slide_extract.core.batch_processor - INFO - Processing 2/2: M01_23_08_31_B_tools.pdf
+2025-07-23 21:54:30,452 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:30,452 - slide_extract.core.manifest_manager - DEBUG - Updated M01_23_08_31_B_tools.pdf: IN_PROGRESS
+2025-07-23 21:54:30,452 - slide_extract.core.batch_processor - DEBUG - Extracting content from tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf
+2025-07-23 21:54:30,452 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf
+2025-07-23 21:54:30,457 - slide_extract.core.pdf_processor - DEBUG - Extracted 80 characters from page 1
+2025-07-23 21:54:30,460 - slide_extract.core.pdf_processor - DEBUG - Found 5 images and 6 drawings on slide 1
+2025-07-23 21:54:30,863 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:30,863 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:30,863 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 210127
+2025-07-23 21:54:30,913 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (291724 bytes)
+2025-07-23 21:54:30,913 - slide_extract.core.pdf_processor - DEBUG - Extracted 11 characters from page 2
+2025-07-23 21:54:30,914 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 2
+2025-07-23 21:54:30,966 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:30,966 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:30,966 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 179362
+2025-07-23 21:54:30,997 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (176364 bytes)
+2025-07-23 21:54:30,998 - slide_extract.core.pdf_processor - DEBUG - Extracted 41 characters from page 3
+2025-07-23 21:54:31,000 - slide_extract.core.pdf_processor - DEBUG - Found 2 images and 5 drawings on slide 3
+2025-07-23 21:54:31,127 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:31,128 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:31,128 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 235137
+2025-07-23 21:54:31,167 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (290908 bytes)
+2025-07-23 21:54:31,168 - slide_extract.core.pdf_processor - DEBUG - Extracted 40 characters from page 4
+2025-07-23 21:54:31,168 - slide_extract.core.pdf_processor - DEBUG - Found 3 images and 4 drawings on slide 4
+2025-07-23 21:54:31,231 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:31,231 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:31,231 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 383091
+2025-07-23 21:54:31,271 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (395880 bytes)
+2025-07-23 21:54:31,272 - slide_extract.core.pdf_processor - DEBUG - Extracted 60 characters from page 5
+2025-07-23 21:54:31,273 - slide_extract.core.pdf_processor - DEBUG - Found 2 images and 6 drawings on slide 5
+2025-07-23 21:54:31,423 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:31,423 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:31,423 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 921589
+2025-07-23 21:54:31,477 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (1026512 bytes)
+2025-07-23 21:54:31,477 - slide_extract.core.pdf_processor - DEBUG - Extracted 60 characters from page 6
+2025-07-23 21:54:31,477 - slide_extract.core.pdf_processor - DEBUG - Found 2 images and 14 drawings on slide 6
+2025-07-23 21:54:31,605 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:31,605 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:31,605 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 899509
+2025-07-23 21:54:31,658 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (999328 bytes)
+2025-07-23 21:54:31,659 - slide_extract.core.pdf_processor - DEBUG - Extracted 83 characters from page 7
+2025-07-23 21:54:31,660 - slide_extract.core.pdf_processor - DEBUG - Found 4 images and 4 drawings on slide 7
+2025-07-23 21:54:31,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:31,859 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:31,859 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 790529
+2025-07-23 21:54:31,915 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (684348 bytes)
+2025-07-23 21:54:31,915 - slide_extract.core.pdf_processor - DEBUG - Extracted 43 characters from page 8
+2025-07-23 21:54:31,915 - slide_extract.core.pdf_processor - DEBUG - Found 0 images and 2 drawings on slide 8
+2025-07-23 21:54:31,954 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:31,954 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:31,954 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 26175
+2025-07-23 21:54:31,972 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (35468 bytes)
+2025-07-23 21:54:31,975 - slide_extract.core.pdf_processor - DEBUG - Extracted 79 characters from page 9
+2025-07-23 21:54:31,977 - slide_extract.core.pdf_processor - DEBUG - Found 6 images and 4 drawings on slide 9
+2025-07-23 21:54:32,049 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,049 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,049 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 482548
+2025-07-23 21:54:32,092 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (514772 bytes)
+2025-07-23 21:54:32,093 - slide_extract.core.pdf_processor - DEBUG - Extracted 33 characters from page 10
+2025-07-23 21:54:32,094 - slide_extract.core.pdf_processor - DEBUG - Found 2 images and 5 drawings on slide 10
+2025-07-23 21:54:32,247 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,247 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,247 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 1231227
+2025-07-23 21:54:32,326 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (921044 bytes)
+2025-07-23 21:54:32,327 - slide_extract.core.pdf_processor - DEBUG - Extracted 31 characters from page 11
+2025-07-23 21:54:32,327 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 11
+2025-07-23 21:54:32,379 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,379 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,379 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 115757
+2025-07-23 21:54:32,406 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (146572 bytes)
+2025-07-23 21:54:32,406 - slide_extract.core.pdf_processor - DEBUG - Extracted 33 characters from page 12
+2025-07-23 21:54:32,407 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 12
+2025-07-23 21:54:32,462 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,462 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,462 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 269960
+2025-07-23 21:54:32,494 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (344960 bytes)
+2025-07-23 21:54:32,494 - slide_extract.core.pdf_processor - DEBUG - Extracted 34 characters from page 13
+2025-07-23 21:54:32,495 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 13
+2025-07-23 21:54:32,580 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,580 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,580 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 683417
+2025-07-23 21:54:32,630 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (746752 bytes)
+2025-07-23 21:54:32,630 - slide_extract.core.pdf_processor - DEBUG - Extracted 35 characters from page 14
+2025-07-23 21:54:32,631 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 14
+2025-07-23 21:54:32,748 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,748 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,748 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 1067062
+2025-07-23 21:54:32,814 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (1142340 bytes)
+2025-07-23 21:54:32,815 - slide_extract.core.pdf_processor - DEBUG - Extracted 7 characters from page 15
+2025-07-23 21:54:32,815 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 15
+2025-07-23 21:54:32,901 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:32,901 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:32,901 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 997094
+2025-07-23 21:54:32,958 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (1059472 bytes)
+2025-07-23 21:54:32,959 - slide_extract.core.pdf_processor - DEBUG - Extracted 28 characters from page 16
+2025-07-23 21:54:32,959 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 3 drawings on slide 16
+2025-07-23 21:54:33,012 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:33,012 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:33,012 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 145392
+2025-07-23 21:54:33,041 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (192848 bytes)
+2025-07-23 21:54:33,042 - slide_extract.core.pdf_processor - DEBUG - Extracted 47 characters from page 17
+2025-07-23 21:54:33,042 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 17
+2025-07-23 21:54:33,105 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:33,105 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:33,105 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 496804
+2025-07-23 21:54:33,145 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (518208 bytes)
+2025-07-23 21:54:33,146 - slide_extract.core.pdf_processor - DEBUG - Extracted 34 characters from page 18
+2025-07-23 21:54:33,146 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 18
+2025-07-23 21:54:33,196 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:33,196 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:33,196 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 129168
+2025-07-23 21:54:33,220 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (171188 bytes)
+2025-07-23 21:54:33,221 - slide_extract.core.pdf_processor - DEBUG - Extracted 40 characters from page 19
+2025-07-23 21:54:33,221 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 2 drawings on slide 19
+2025-07-23 21:54:33,270 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:33,270 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:33,270 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 184910
+2025-07-23 21:54:33,301 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (235104 bytes)
+2025-07-23 21:54:33,301 - slide_extract.core.pdf_processor - DEBUG - Extracted 82 characters from page 20
+2025-07-23 21:54:33,302 - slide_extract.core.pdf_processor - DEBUG - Found 1 images and 3 drawings on slide 20
+2025-07-23 21:54:33,417 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-07-23 21:54:33,417 - PIL.PngImagePlugin - DEBUG - STREAM b'pHYs' 41 9
+2025-07-23 21:54:33,417 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 62 576858
+2025-07-23 21:54:33,463 - slide_extract.core.pdf_processor - DEBUG - Rendered page as 2000x1125 image (672816 bytes)
+2025-07-23 21:54:33,464 - slide_extract.core.pdf_processor - INFO - Successfully processed 20 slides from tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf (20 with visual content, 111 total visual elements)
+2025-07-23 21:54:33,464 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:33,464 - slide_extract.core.manifest_manager - DEBUG - Updated M01_23_08_31_B_tools.pdf: IN_PROGRESS
+2025-07-23 21:54:33,464 - slide_extract.core.batch_processor - INFO - Resuming M01_23_08_31_B_tools.pdf from slide 1
+2025-07-23 21:54:33,464 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 20 total slides
+2025-07-23 21:54:33,464 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-23 21:54:33,465 - slide_extract.core.note_generator - WARNING - Slide 1 narration too short
+2025-07-23 21:54:33,465 - slide_extract.core.note_generator - ERROR - Failed to generate analysis for slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:33,465 - slide_extract.core.progress_manager - ERROR - Recorded error for slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:33,465 - slide_extract.core.note_generator - ERROR - Critical error during processing: Failed to process slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:33,465 - slide_extract.core.batch_processor - ERROR - Processing error for M01_23_08_31_B_tools.pdf: Failed to process slide 1: Generated content for slide 1 failed validation
+2025-07-23 21:54:33,465 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:33,465 - slide_extract.core.manifest_manager - DEBUG - Updated M01_23_08_31_B_tools.pdf: ERROR
+2025-07-23 21:54:33,466 - slide_extract.core.batch_processor - ERROR - ✗ Failed M01_23_08_31_B_tools.pdf
+2025-07-23 21:54:33,466 - slide_extract.core.batch_processor - INFO - Batch processing completed in 0:00:06.859217
+2025-07-23 21:54:33,466 - slide_extract.core.batch_processor - INFO - Successfully processed: 0
+2025-07-23 21:54:33,466 - slide_extract.core.batch_processor - INFO - Errors: 2
+2025-07-23 21:54:33,466 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:33,466 - slide_extract.core.batch_processor - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 2, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:54:33,466 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:33,466 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:54:33,466 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-23 21:54:33,466 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 2, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:55:13,344 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-23 21:55:13,344 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 21:55:13,344 - slide_extract.core.file_manager - INFO - Created directory: /tmp/test_output
+2025-07-23 21:55:13,344 - slide_extract.core.file_manager - INFO - Loaded prompt from tests/fixtures/prompts/basic_prompt.md (302 characters)
+2025-07-23 21:55:13,344 - slide_extract.cli.common - INFO - Running in no-AI mode (placeholder only)
+2025-07-23 21:55:13,344 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slides -> /tmp/test_output
+2025-07-23 21:55:13,344 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-23 21:55:13,345 - slide_extract.core.file_manager - INFO - Discovered 2 PDF files in tests/fixtures/sample_slides
+2025-07-23 21:55:13,345 - slide_extract.core.manifest_manager - INFO - Initialized manifest with 2 files
+2025-07-23 21:55:13,345 - slide_extract.core.batch_processor - INFO - Initialized new batch processing for 2 files
+2025-07-23 21:55:13,345 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:13,345 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 2, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:55:13,345 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:13,345 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:13,345 - slide_extract.core.batch_processor - INFO - Processing 2 files...
+2025-07-23 21:55:13,345 - slide_extract.core.batch_processor - INFO - Processing 1/2: M01_23_08_31_A_Intro.pdf
+2025-07-23 21:55:13,345 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:13,345 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf
+2025-07-23 21:55:17,739 - slide_extract.core.pdf_processor - INFO - Successfully processed 25 slides from tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf (25 with visual content, 120 total visual elements)
+2025-07-23 21:55:17,739 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 25 total slides
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (423 chars)
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 176 chars, images: True)...
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (414 chars)
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 346 chars, images: True)...
+2025-07-23 21:55:17,740 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (399 chars)
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 501 chars, images: True)...
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (360 chars)
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 617 chars, images: True)...
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (334 chars)
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - Processed 5/25 slides
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 707 chars, images: True)...
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (399 chars)
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 684 chars, images: True)...
+2025-07-23 21:55:17,741 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (388 chars)
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 657 chars, images: True)...
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (473 chars)
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 731 chars, images: True)...
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (351 chars)
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 722 chars, images: True)...
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (405 chars)
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - Processed 10/25 slides
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 794 chars, images: True)...
+2025-07-23 21:55:17,742 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (354 chars)
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 750 chars, images: True)...
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (393 chars)
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 757 chars, images: True)...
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (381 chars)
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 666 chars, images: True)...
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (466 chars)
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 782 chars, images: True)...
+2025-07-23 21:55:17,743 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (367 chars)
+2025-07-23 21:55:17,744 - slide_extract.core.note_generator - INFO - Processed 15/25 slides
+2025-07-23 21:55:17,744 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 744 chars, images: True)...
+2025-07-23 21:55:17,744 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (381 chars)
+2025-07-23 21:55:17,744 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 771 chars, images: True)...
+2025-07-23 21:55:17,744 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (358 chars)
+2025-07-23 21:55:17,744 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 736 chars, images: True)...
+2025-07-23 21:55:17,745 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (2629 chars)
+2025-07-23 21:55:17,745 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 888 chars, images: True)...
+2025-07-23 21:55:17,745 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (391 chars)
+2025-07-23 21:55:17,745 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 813 chars, images: True)...
+2025-07-23 21:55:17,745 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (366 chars)
+2025-07-23 21:55:17,746 - slide_extract.core.note_generator - INFO - Processed 20/25 slides
+2025-07-23 21:55:17,746 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 812 chars, images: True)...
+2025-07-23 21:55:17,746 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (343 chars)
+2025-07-23 21:55:17,746 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 774 chars, images: True)...
+2025-07-23 21:55:17,746 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (364 chars)
+2025-07-23 21:55:17,747 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 780 chars, images: True)...
+2025-07-23 21:55:17,747 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (350 chars)
+2025-07-23 21:55:17,747 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 597 chars, images: True)...
+2025-07-23 21:55:17,747 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (408 chars)
+2025-07-23 21:55:17,748 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 613 chars, images: True)...
+2025-07-23 21:55:17,748 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (335 chars)
+2025-07-23 21:55:17,748 - slide_extract.core.note_generator - INFO - Processed 25/25 slides
+2025-07-23 21:55:17,748 - slide_extract.core.note_generator - INFO - Output validation passed: 25 slides, 11982 total characters
+2025-07-23 21:55:17,748 - slide_extract.core.note_generator - INFO - Note generation completed: 25 slides, 11982 characters
+2025-07-23 21:55:17,748 - slide_extract.core.file_manager - INFO - Written 11982 characters to /tmp/test_output/M01_23_08_31_A_Intro_summary.md
+2025-07-23 21:55:17,749 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 21:55:17,749 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:17,749 - slide_extract.core.batch_processor - INFO - Generated 11982 characters for M01_23_08_31_A_Intro.pdf
+2025-07-23 21:55:17,749 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_A_Intro.pdf
+2025-07-23 21:55:17,749 - slide_extract.core.batch_processor - INFO - Processing 2/2: M01_23_08_31_B_tools.pdf
+2025-07-23 21:55:17,749 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:17,750 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf
+2025-07-23 21:55:20,950 - slide_extract.core.pdf_processor - INFO - Successfully processed 20 slides from tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf (20 with visual content, 111 total visual elements)
+2025-07-23 21:55:20,951 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:20,951 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 20 total slides
+2025-07-23 21:55:20,951 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 582 chars, images: True)...
+2025-07-23 21:55:20,951 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (412 chars)
+2025-07-23 21:55:20,951 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 649 chars, images: True)...
+2025-07-23 21:55:20,951 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (342 chars)
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 626 chars, images: True)...
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (372 chars)
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 647 chars, images: True)...
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (371 chars)
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 610 chars, images: True)...
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (391 chars)
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - Processed 5/20 slides
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 665 chars, images: True)...
+2025-07-23 21:55:20,952 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (392 chars)
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 645 chars, images: True)...
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (414 chars)
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 717 chars, images: True)...
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (374 chars)
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 719 chars, images: True)...
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (411 chars)
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 758 chars, images: True)...
+2025-07-23 21:55:20,953 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (366 chars)
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - Processed 10/20 slides
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 734 chars, images: True)...
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (364 chars)
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 708 chars, images: True)...
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (366 chars)
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 661 chars, images: True)...
+2025-07-23 21:55:20,954 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (367 chars)
+2025-07-23 21:55:20,955 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 655 chars, images: True)...
+2025-07-23 21:55:20,955 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (368 chars)
+2025-07-23 21:55:20,955 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 614 chars, images: True)...
+2025-07-23 21:55:20,955 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (340 chars)
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - Processed 15/20 slides
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 588 chars, images: True)...
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (361 chars)
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 585 chars, images: True)...
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (380 chars)
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 599 chars, images: True)...
+2025-07-23 21:55:20,956 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (367 chars)
+2025-07-23 21:55:20,957 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 599 chars, images: True)...
+2025-07-23 21:55:20,957 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (373 chars)
+2025-07-23 21:55:20,957 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 604 chars, images: True)...
+2025-07-23 21:55:20,957 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (415 chars)
+2025-07-23 21:55:20,958 - slide_extract.core.note_generator - INFO - Processed 20/20 slides
+2025-07-23 21:55:20,958 - slide_extract.core.note_generator - INFO - Output validation passed: 20 slides, 7666 total characters
+2025-07-23 21:55:20,958 - slide_extract.core.note_generator - INFO - Note generation completed: 20 slides, 7666 characters
+2025-07-23 21:55:20,958 - slide_extract.core.file_manager - INFO - Written 7666 characters to /tmp/test_output/M01_23_08_31_B_tools_summary.md
+2025-07-23 21:55:20,958 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 21:55:20,958 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:20,958 - slide_extract.core.batch_processor - INFO - Generated 7666 characters for M01_23_08_31_B_tools.pdf
+2025-07-23 21:55:20,959 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_B_tools.pdf
+2025-07-23 21:55:20,959 - slide_extract.core.batch_processor - INFO - Batch processing completed in 0:00:07.614267
+2025-07-23 21:55:20,959 - slide_extract.core.batch_processor - INFO - Successfully processed: 2
+2025-07-23 21:55:20,959 - slide_extract.core.batch_processor - INFO - Errors: 0
+2025-07-23 21:55:20,959 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:20,959 - slide_extract.core.batch_processor - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:55:20,959 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:20,959 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:55:20,959 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-23 21:55:20,959 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:58:58,513 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-23 21:58:58,513 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 21:58:58,513 - slide_extract.core.file_manager - INFO - Created directory: /tmp/final_test_output
+2025-07-23 21:58:58,514 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-23 21:58:58,514 - slide_extract.cli.common - INFO - Running in no-AI mode (placeholder only)
+2025-07-23 21:58:58,514 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slides -> /tmp/final_test_output
+2025-07-23 21:58:58,514 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-23 21:58:58,514 - slide_extract.core.file_manager - INFO - Discovered 2 PDF files in tests/fixtures/sample_slides
+2025-07-23 21:58:58,514 - slide_extract.core.manifest_manager - INFO - Initialized manifest with 2 files
+2025-07-23 21:58:58,515 - slide_extract.core.batch_processor - INFO - Initialized new batch processing for 2 files
+2025-07-23 21:58:58,515 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:58:58,515 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 2, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:58:58,515 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:58:58,515 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:58:58,515 - slide_extract.core.batch_processor - INFO - Processing 2 files...
+2025-07-23 21:58:58,515 - slide_extract.core.batch_processor - INFO - Processing 1/2: M01_23_08_31_A_Intro.pdf
+2025-07-23 21:58:58,515 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:58:58,515 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf
+2025-07-23 21:59:02,411 - slide_extract.core.pdf_processor - INFO - Successfully processed 25 slides from tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf (25 with visual content, 120 total visual elements)
+2025-07-23 21:59:02,411 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:02,412 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 25 total slides
+2025-07-23 21:59:02,412 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-23 21:59:02,412 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (423 chars)
+2025-07-23 21:59:02,412 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 176 chars, images: True)...
+2025-07-23 21:59:02,412 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (414 chars)
+2025-07-23 21:59:02,413 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 346 chars, images: True)...
+2025-07-23 21:59:02,413 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (399 chars)
+2025-07-23 21:59:02,413 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 501 chars, images: True)...
+2025-07-23 21:59:02,413 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (360 chars)
+2025-07-23 21:59:02,413 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 617 chars, images: True)...
+2025-07-23 21:59:02,413 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (334 chars)
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - Processed 5/25 slides
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 707 chars, images: True)...
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (399 chars)
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 684 chars, images: True)...
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (388 chars)
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 657 chars, images: True)...
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (473 chars)
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 731 chars, images: True)...
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (351 chars)
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 722 chars, images: True)...
+2025-07-23 21:59:02,414 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (405 chars)
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - Processed 10/25 slides
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 794 chars, images: True)...
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (354 chars)
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 750 chars, images: True)...
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (393 chars)
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 757 chars, images: True)...
+2025-07-23 21:59:02,415 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (381 chars)
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 666 chars, images: True)...
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (466 chars)
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 782 chars, images: True)...
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (367 chars)
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - Processed 15/25 slides
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 744 chars, images: True)...
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (381 chars)
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 771 chars, images: True)...
+2025-07-23 21:59:02,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (358 chars)
+2025-07-23 21:59:02,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 736 chars, images: True)...
+2025-07-23 21:59:02,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (2629 chars)
+2025-07-23 21:59:02,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 888 chars, images: True)...
+2025-07-23 21:59:02,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (391 chars)
+2025-07-23 21:59:02,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 813 chars, images: True)...
+2025-07-23 21:59:02,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (366 chars)
+2025-07-23 21:59:02,418 - slide_extract.core.note_generator - INFO - Processed 20/25 slides
+2025-07-23 21:59:02,418 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 812 chars, images: True)...
+2025-07-23 21:59:02,418 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (343 chars)
+2025-07-23 21:59:02,418 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 774 chars, images: True)...
+2025-07-23 21:59:02,418 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (364 chars)
+2025-07-23 21:59:02,419 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 780 chars, images: True)...
+2025-07-23 21:59:02,419 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (350 chars)
+2025-07-23 21:59:02,419 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 597 chars, images: True)...
+2025-07-23 21:59:02,419 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (408 chars)
+2025-07-23 21:59:02,419 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 613 chars, images: True)...
+2025-07-23 21:59:02,420 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (335 chars)
+2025-07-23 21:59:02,420 - slide_extract.core.note_generator - INFO - Processed 25/25 slides
+2025-07-23 21:59:02,420 - slide_extract.core.note_generator - INFO - Output validation passed: 25 slides, 11982 total characters
+2025-07-23 21:59:02,420 - slide_extract.core.note_generator - INFO - Note generation completed: 25 slides, 11982 characters
+2025-07-23 21:59:02,420 - slide_extract.core.file_manager - INFO - Written 11982 characters to /tmp/final_test_output/M01_23_08_31_A_Intro_summary.md
+2025-07-23 21:59:02,420 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 21:59:02,420 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:02,420 - slide_extract.core.batch_processor - INFO - Generated 11982 characters for M01_23_08_31_A_Intro.pdf
+2025-07-23 21:59:02,421 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_A_Intro.pdf
+2025-07-23 21:59:02,421 - slide_extract.core.batch_processor - INFO - Processing 2/2: M01_23_08_31_B_tools.pdf
+2025-07-23 21:59:02,421 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:02,421 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf
+2025-07-23 21:59:05,473 - slide_extract.core.pdf_processor - INFO - Successfully processed 20 slides from tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf (20 with visual content, 111 total visual elements)
+2025-07-23 21:59:05,473 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:05,473 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 20 total slides
+2025-07-23 21:59:05,473 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 582 chars, images: True)...
+2025-07-23 21:59:05,473 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (412 chars)
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 649 chars, images: True)...
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (342 chars)
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 626 chars, images: True)...
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (372 chars)
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 647 chars, images: True)...
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (371 chars)
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 610 chars, images: True)...
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (391 chars)
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - Processed 5/20 slides
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 665 chars, images: True)...
+2025-07-23 21:59:05,474 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (392 chars)
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 645 chars, images: True)...
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (414 chars)
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 717 chars, images: True)...
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (374 chars)
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 719 chars, images: True)...
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (411 chars)
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 758 chars, images: True)...
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (366 chars)
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - Processed 10/20 slides
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 734 chars, images: True)...
+2025-07-23 21:59:05,475 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (364 chars)
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 708 chars, images: True)...
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (366 chars)
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 661 chars, images: True)...
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (367 chars)
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 655 chars, images: True)...
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (368 chars)
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 614 chars, images: True)...
+2025-07-23 21:59:05,476 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (340 chars)
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - Processed 15/20 slides
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 588 chars, images: True)...
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (361 chars)
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 585 chars, images: True)...
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (380 chars)
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 599 chars, images: True)...
+2025-07-23 21:59:05,477 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (367 chars)
+2025-07-23 21:59:05,478 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 599 chars, images: True)...
+2025-07-23 21:59:05,478 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (373 chars)
+2025-07-23 21:59:05,478 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 604 chars, images: True)...
+2025-07-23 21:59:05,478 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (415 chars)
+2025-07-23 21:59:05,479 - slide_extract.core.note_generator - INFO - Processed 20/20 slides
+2025-07-23 21:59:05,479 - slide_extract.core.note_generator - INFO - Output validation passed: 20 slides, 7666 total characters
+2025-07-23 21:59:05,479 - slide_extract.core.note_generator - INFO - Note generation completed: 20 slides, 7666 characters
+2025-07-23 21:59:05,479 - slide_extract.core.file_manager - INFO - Written 7666 characters to /tmp/final_test_output/M01_23_08_31_B_tools_summary.md
+2025-07-23 21:59:05,479 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 21:59:05,479 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:05,479 - slide_extract.core.batch_processor - INFO - Generated 7666 characters for M01_23_08_31_B_tools.pdf
+2025-07-23 21:59:05,479 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_B_tools.pdf
+2025-07-23 21:59:05,480 - slide_extract.core.batch_processor - INFO - Batch processing completed in 0:00:06.965809
+2025-07-23 21:59:05,480 - slide_extract.core.batch_processor - INFO - Successfully processed: 2
+2025-07-23 21:59:05,480 - slide_extract.core.batch_processor - INFO - Errors: 0
+2025-07-23 21:59:05,480 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:05,480 - slide_extract.core.batch_processor - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 21:59:05,480 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:05,480 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 21:59:05,480 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-23 21:59:05,480 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}

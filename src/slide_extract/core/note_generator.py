@@ -456,6 +456,15 @@ class NoteGenerator:
 
     def _validate_generated_content(self, content: str, slide_num: int) -> bool:
         """Validate individual slide content meets quality standards."""
+        # In no-AI mode, use relaxed validation for placeholder content
+        if not self.use_ai:
+            if len(content.strip()) < 50:  # More lenient for placeholders
+                logger.warning(f"Slide {slide_num} content too short ({len(content)} chars)")
+                return False
+            # Just check basic structure exists
+            return '**Slide Number:**' in content
+        
+        # Full validation for AI-generated content
         if len(content.strip()) < 100:  # Minimum reasonable length
             logger.warning(f"Slide {slide_num} content too short ({len(content)} chars)")
             return False
@@ -491,9 +500,10 @@ class NoteGenerator:
         if slide_count != expected_slides:
             raise NoteGenerationError(f"Output contains {slide_count} slides, expected {expected_slides}")
         
-        # Check overall length is reasonable
+        # Check overall length is reasonable (more lenient for no-AI mode)
         avg_chars_per_slide = len(content) / expected_slides
-        if avg_chars_per_slide < 500:  # Minimum average per slide
+        min_chars_per_slide = 100 if not self.use_ai else 500  # Relaxed for placeholders
+        if avg_chars_per_slide < min_chars_per_slide:
             logger.warning(f"Average content per slide is low ({avg_chars_per_slide:.0f} chars)")
         
         logger.info(f"Output validation passed: {slide_count} slides, {len(content)} total characters")
