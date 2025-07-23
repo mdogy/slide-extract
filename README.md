@@ -175,32 +175,36 @@ slide-extract [OPTIONS]
 
 1. **Basic AI-powered analysis with default configuration:**
    ```bash
+   # Using the CLI command (if environment is properly configured)
    slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
+   
+   # Alternative: Using Python module directly (recommended)
+   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md
    ```
 
 2. **Process multiple PDFs with file output:**
    ```bash
-   slide-extract -i slide1.pdf slide2.pdf slide3.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md
+   python -m slide_extract.scripts.main -i slide1.pdf slide2.pdf slide3.pdf -p src/slide_extract/prompts/default_prompt.md -o notes.md
    ```
 
 3. **Use custom configuration file:**
    ```bash
-   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -c my_config.yaml -o notes.md
+   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -c my_config.yaml -o notes.md
    ```
 
 4. **Enable verbose logging:**
    ```bash
-   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -v -o detailed_notes.md
+   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md -v -o detailed_notes.md
    ```
 
 5. **Test mode without AI (placeholder mode):**
    ```bash
-   slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_notes.md
+   python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_notes.md
    ```
 
 6. **Using long-form arguments:**
    ```bash
-   slide-extract --input presentation.pdf --prompt src/slide_extract/prompts/default_prompt.md --output notes.md --verbose
+   python -m slide_extract.scripts.main --input presentation.pdf --prompt src/slide_extract/prompts/default_prompt.md --output notes.md --verbose
    ```
 
 ### Using the Default Prompt
@@ -505,7 +509,7 @@ This project is provided as-is for educational and development purposes.
 You can test the tool without setting up API keys:
 
 ```bash
-slide-extract -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_output.md
+python -m slide_extract.scripts.main -i presentation.pdf -p src/slide_extract/prompts/default_prompt.md --no-ai -o test_output.md
 ```
 
 This runs in placeholder mode and generates formatted output without AI analysis.

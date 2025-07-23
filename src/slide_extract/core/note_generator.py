@@ -6,8 +6,10 @@ from typing import Dict, List, Optional
 
 try:
     from .llm_client import LLMClient, LLMError
+    from .pdf_processor import SlideContent
 except ImportError:
     from llm_client import LLMClient, LLMError
+    from pdf_processor import SlideContent
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +30,8 @@ class NoteGenerator:
         self.generated_notes: List[str] = []
         self.llm_client = llm_client
         self.use_ai = llm_client is not None
+        self.cumulative_context: List[str] = []
+        self.processed_slides: List[int] = []
 
     def load_prompt_from_file(self, prompt_file: Path) -> str:
         """
@@ -65,15 +69,14 @@ class NoteGenerator:
                 f"Failed to read prompt file {prompt_file}: {str(e)}"
             ) from e
 
-    def generate_notes_for_slide(
-        self, slide_number: int, slide_text: str, prompt: str
+    def generate_notes_for_slide_content(
+        self, slide_content: SlideContent, prompt: str
     ) -> str:
         """
-        Generate speaker notes for a single slide using AI or placeholder.
+        Generate speaker notes for a slide using multi-modal AI with cumulative context.
 
         Args:
-            slide_number: The slide number (1-indexed)
-            slide_text: The extracted text content from the slide
+            slide_content: SlideContent object with text and image data
             prompt: The user-provided prompt for note generation
 
         Returns:
@@ -82,38 +85,139 @@ class NoteGenerator:
         Raises:
             NoteGenerationError: If AI generation fails
         """
-        logger.debug("Generating notes for slide %d", slide_number)
+        slide_number = slide_content.slide_number
+        logger.debug("Generating notes for slide %d (multi-modal: %s)", 
+                    slide_number, slide_content.has_images)
 
         if self.use_ai and self.llm_client:
             try:
+                # Build cumulative context from previous slides
+                context = self._build_context()
+                
                 # Use AI to generate comprehensive notes
-                logger.info("Requesting AI analysis for slide %d...", slide_number)
+                logger.info("Requesting AI analysis for slide %d (context: %d chars, images: %s)...", 
+                           slide_number, len(context), slide_content.has_images)
+                
                 ai_response = self.llm_client.generate_slide_analysis(
-                    slide_text, prompt, slide_number
+                    slide_content.text, 
+                    prompt, 
+                    slide_number,
+                    context=context,
+                    image_base64=slide_content.image_base64
                 )
+                
                 logger.info(
                     "AI analysis completed for slide %d (%d chars)",
                     slide_number,
                     len(ai_response),
                 )
+                
+                # Verify image descriptions if slide had images
+                if slide_content.has_images:
+                    self._verify_image_descriptions(ai_response, slide_number, slide_content.image_count)
+                
                 notes = ai_response + "\n---\n\n"
+                
+                # Add to cumulative context for future slides
+                self._add_to_context(slide_number, slide_content.text, ai_response)
 
             except LLMError as e:
                 logger.error("AI generation failed for slide %d: %s", slide_number, e)
                 # Fallback to placeholder format
                 notes = self._generate_placeholder_notes(
-                    slide_number, slide_text, prompt
+                    slide_number, slide_content.text, prompt, slide_content
                 )
 
         else:
             # Use placeholder implementation
-            notes = self._generate_placeholder_notes(slide_number, slide_text, prompt)
+            notes = self._generate_placeholder_notes(
+                slide_number, slide_content.text, prompt, slide_content
+            )
 
         self.generated_notes.append(notes)
+        self.processed_slides.append(slide_number)
         return notes
+        
+    def _build_context(self, max_context_slides: int = 3) -> str:
+        """
+        Build cumulative context from previous slides.
+        
+        Args:
+            max_context_slides: Maximum number of previous slides to include
+            
+        Returns:
+            Formatted context string
+        """
+        if not self.cumulative_context:
+            return ""
+            
+        # Take the most recent slides for context
+        recent_context = self.cumulative_context[-max_context_slides:]
+        return "\n".join(recent_context)
+    
+    def _add_to_context(self, slide_number: int, slide_text: str, analysis: str) -> None:
+        """
+        Add slide summary to cumulative context.
+        
+        Args:
+            slide_number: The slide number
+            slide_text: Original slide text
+            analysis: AI-generated analysis
+        """
+        # Extract key points for context (limit length)
+        summary_lines = analysis.split('\n')[:5]  # First 5 lines as summary
+        summary = '\n'.join(summary_lines)
+        
+        context_entry = f"Slide {slide_number}: {slide_text[:200]}...\nKey points: {summary[:300]}..."
+        self.cumulative_context.append(context_entry)
+        
+        # Keep context manageable - limit to last 5 slides
+        if len(self.cumulative_context) > 5:
+            self.cumulative_context.pop(0)
+    
+    def _verify_image_descriptions(self, analysis: str, slide_number: int, expected_images: int) -> None:
+        """
+        Verify that image descriptions are present in the analysis.
+        
+        Args:
+            analysis: Generated analysis text
+            slide_number: Slide number for logging
+            expected_images: Number of images detected in slide
+        """
+        # Look for image-related keywords in the analysis
+        image_keywords = ['image', 'diagram', 'chart', 'graph', 'figure', 'picture', 'visual', 'shown', 'displays']
+        
+        analysis_lower = analysis.lower()
+        image_mentions = sum(1 for keyword in image_keywords if keyword in analysis_lower)
+        
+        if expected_images > 0 and image_mentions == 0:
+            logger.warning(
+                "Slide %d has %d images but no image descriptions found in analysis",
+                slide_number, expected_images
+            )
+        else:
+            logger.debug(
+                "Slide %d: Found %d image-related mentions for %d detected images",
+                slide_number, image_mentions, expected_images
+            )
+
+    def generate_notes_for_slide(
+        self, slide_number: int, slide_text: str, prompt: str
+    ) -> str:
+        """
+        Legacy method for backward compatibility - generates notes for text-only slides.
+        """
+        slide_content = SlideContent(
+            slide_number=slide_number,
+            text=slide_text,
+            image_base64=None,
+            has_images=False,
+            image_count=0
+        )
+        return self.generate_notes_for_slide_content(slide_content, prompt)
 
     def _generate_placeholder_notes(
-        self, slide_number: int, slide_text: str, prompt: str
+        self, slide_number: int, slide_text: str, prompt: str, slide_content: SlideContent = None
     ) -> str:
         """
         Generate placeholder notes in the expected format.
@@ -122,22 +226,110 @@ class NoteGenerator:
             slide_number: The slide number
             slide_text: The slide text content
             prompt: The analysis prompt
+            slide_content: Optional SlideContent for image information
 
         Returns:
             Formatted placeholder notes
         """
+        image_info = "[AI vision analysis not available - placeholder mode]"
+        if slide_content and slide_content.has_images:
+            image_info = f"[{slide_content.image_count} image(s) detected but AI vision analysis not available - placeholder mode]"
+            
         return (
             f"#### Slide: Slide {slide_number}\n\n"
             f"**Slide Number:** {slide_number}\n\n"
             f"**Slide Text:**\n{slide_text}\n\n"
             f"**Slide Images/Diagrams:**\n"
-            f"[AI vision analysis not available - placeholder mode]\n\n"
+            f"{image_info}\n\n"
             f"**Slide Topics:**\n"
             f"*   [AI topic extraction not available - placeholder mode]\n\n"
             f"**Slide Narration:**\n"
             f'"[AI-generated narration not available - placeholder mode]"\n\n'
             f"---\n\n"
         )
+        
+    def generate_notes_for_slide_contents(
+        self, slide_contents: Dict[int, SlideContent], prompt: str
+    ) -> str:
+        """
+        Generate notes for multiple slides with verification and range processing.
+        
+        Args:
+            slide_contents: Dictionary of slide number to SlideContent
+            prompt: The user-provided prompt
+            
+        Returns:
+            Combined notes for all slides
+        """
+        total_slides = len(slide_contents)
+        logger.info("Generating notes for %d slides with multi-modal support", total_slides)
+        
+        all_notes = []
+        
+        # Process slides in order
+        for slide_num in sorted(slide_contents.keys()):
+            slide_content = slide_contents[slide_num]
+            
+            notes = self.generate_notes_for_slide_content(slide_content, prompt)
+            all_notes.append(notes)
+            
+            # Log progress
+            if slide_num % 5 == 0 or slide_num == total_slides:
+                logger.info("Processed %d/%d slides", slide_num, total_slides)
+        
+        # Verify all slides were processed
+        self._verify_complete_processing(slide_contents)
+        
+        combined_notes = "".join(all_notes)
+        logger.info("Generated %d characters of notes for %d slides", 
+                   len(combined_notes), total_slides)
+        
+        return combined_notes
+    
+    def _verify_complete_processing(self, expected_slides: Dict[int, SlideContent]) -> None:
+        """
+        Verify that all slides were processed and contain appropriate content.
+        
+        Args:
+            expected_slides: Dictionary of expected slide numbers to content
+        """
+        expected_nums = set(expected_slides.keys())
+        processed_nums = set(self.processed_slides)
+        
+        missing_slides = expected_nums - processed_nums
+        if missing_slides:
+            logger.error("Missing slides in processing: %s", sorted(missing_slides))
+            raise NoteGenerationError(f"Failed to process slides: {sorted(missing_slides)}")
+        
+        # Check for slides with images that should have descriptions
+        slides_with_images = [
+            num for num, content in expected_slides.items() 
+            if content.has_images
+        ]
+        
+        if slides_with_images:
+            logger.info("Processed %d slides with images: %s", 
+                       len(slides_with_images), slides_with_images)
+        
+        # Verify image descriptions exist for slides with images
+        missing_descriptions = []
+        for slide_num in slides_with_images:
+            # Check if the corresponding note mentions images
+            slide_index = slide_num - 1
+            if slide_index < len(self.generated_notes):
+                note_content = self.generated_notes[slide_index].lower()
+                image_keywords = ['image', 'diagram', 'chart', 'graph', 'figure', 'visual']
+                if not any(keyword in note_content for keyword in image_keywords):
+                    missing_descriptions.append(slide_num)
+        
+        if missing_descriptions:
+            logger.warning(
+                "Slides with images but no descriptions: %s", 
+                missing_descriptions
+            )
+            
+        logger.info("Processing verification complete: %d/%d slides processed successfully", 
+                   len(processed_nums), len(expected_nums))
 
     def generate_notes_for_pdf(
         self, pdf_path: str, page_texts: Dict[int, str], prompt: str

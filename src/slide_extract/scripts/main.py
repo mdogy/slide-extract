@@ -228,13 +228,33 @@ def main() -> int:
         logger.info("Loading user prompt")
         prompt_text = note_generator.load_prompt_from_file(prompt_path)
 
-        # Process PDF files
-        logger.info(f"Processing {len(pdf_paths)} PDF files")
-        pdf_data = pdf_processor.process_multiple_pdfs(pdf_paths)
+        # Process PDF files with multi-modal support
+        logger.info(f"Processing {len(pdf_paths)} PDF files with multi-modal analysis")
+        
+        all_slide_contents = {}
+        for pdf_path in pdf_paths:
+            # Get PDF info first
+            pdf_info = pdf_processor.get_pdf_info(pdf_path)
+            logger.info(f"PDF {pdf_path.name}: {pdf_info['page_count']} pages, {pdf_info['total_images']} images")
+            
+            # Extract slide content with multi-modal support
+            slide_contents = pdf_processor.extract_slide_content(pdf_path)
+            all_slide_contents[str(pdf_path)] = slide_contents
 
-        # Generate notes
-        logger.info("Generating speaker notes")
-        notes = note_generator.generate_notes_for_multiple_pdfs(pdf_data, prompt_text)
+        # Generate notes using multi-modal content
+        logger.info("Generating speaker notes with multi-modal analysis")
+        all_notes = []
+        
+        for pdf_path_str, slide_contents in all_slide_contents.items():
+            pdf_name = Path(pdf_path_str).name
+            header = f"# Notes for {pdf_name}\n\n"
+            all_notes.append(header)
+            
+            # Generate notes for each slide with multi-modal support
+            slide_notes = note_generator.generate_notes_for_slide_contents(slide_contents, prompt_text)
+            all_notes.append(slide_notes)
+        
+        notes = "".join(all_notes)
 
         # Output results
         if output_path:

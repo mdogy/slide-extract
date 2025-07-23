@@ -99,7 +99,7 @@ processing:
 # Logging Configuration
 logging:
   # Log level: DEBUG, INFO, WARNING, ERROR
-  level: "INFO"
+  level: "DEBUG"
   
   # Include LLM request/response details in logs (may contain sensitive data)
   log_llm_details: false
