@@ -1,9 +1,0 @@
-# Slide Directory Extract Progress Manifest
-# Generated: 2025-07-23T21:54:33.465410
-# Command: 
-# Output Directory: /Users/michael/Documents/dev/slide-extract
-# Total Files: 2
-#
-STATUS|FILENAME|INPUT_PATH|OUTPUT_PATH|TOTAL_SLIDES|COMPLETED_SLIDES|START_TIME|COMPLETION_TIME|ERROR_MESSAGE|FILE_SIZE|CHECKSUM
-ERROR|M01_23_08_31_A_Intro.pdf|tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf|/Users/michael/Documents/dev/slide-extract/M01_23_08_31_A_Intro_summary.md|25|0|2025-07-23T21:54:26.608538||Failed to process slide 1: Generated content for slide 1 failed validation|10694885|9a8fd33340d6b798
-ERROR|M01_23_08_31_B_tools.pdf|tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf|/Users/michael/Documents/dev/slide-extract/M01_23_08_31_B_tools_summary.md|20|0|2025-07-23T21:54:30.452550||Failed to process slide 1: Generated content for slide 1 failed validation|4039308|7b3a4eceecaf22f1
