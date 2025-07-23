@@ -1,0 +1,1124 @@
+2025-07-23 22:22:46,187 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-23 22:22:46,187 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 22:22:46,188 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-23 22:22:46,190 - slide_extract.core.config_manager - INFO - Loaded configuration from config.yaml
+2025-07-23 22:22:46,190 - slide_extract.core.config_manager - INFO - Loaded API keys from /Users/michael/.slide_extract_keys.env
+2025-07-23 22:22:46,615 - slide_extract.cli.common - INFO - Testing LLM connection...
+2025-07-23 22:28:27,355 - slide_extract.cli.batch - INFO - Batch processing interrupted by user
+2025-07-23 22:28:27,356 - slide_extract.cli.batch - INFO - Progress saved in manifest. Use --resume to continue from where you left off
+2025-07-23 22:28:42,736 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-23 22:28:42,736 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 22:28:42,737 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-23 22:28:42,739 - slide_extract.core.config_manager - INFO - Loaded configuration from config.yaml
+2025-07-23 22:28:42,739 - slide_extract.core.config_manager - INFO - Loaded API keys from /Users/michael/.slide_extract_keys.env
+2025-07-23 22:28:43,034 - slide_extract.cli.common - INFO - Testing LLM connection...
+2025-07-23 22:28:45,208 - slide_extract.core.llm_client - INFO - LLM connection test successful for google
+2025-07-23 22:28:45,209 - slide_extract.cli.common - INFO - LLM connection successful: google gemini-2.5-flash
+2025-07-23 22:28:45,209 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slides -> tests/fixtures/sample_slide_summaries
+2025-07-23 22:28:45,209 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-23 22:28:45,210 - slide_extract.core.file_manager - INFO - Discovered 2 PDF files in tests/fixtures/sample_slides
+2025-07-23 22:28:45,213 - slide_extract.core.manifest_manager - INFO - Initialized manifest with 2 files
+2025-07-23 22:28:45,213 - slide_extract.core.batch_processor - INFO - Initialized new batch processing for 2 files
+2025-07-23 22:28:45,213 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:28:45,213 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 2, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 22:28:45,213 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:28:45,213 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:28:45,214 - slide_extract.core.batch_processor - INFO - Processing 2 files...
+2025-07-23 22:28:45,214 - slide_extract.core.batch_processor - INFO - Processing 1/2: M01_23_08_31_A_Intro.pdf
+2025-07-23 22:28:45,214 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:28:45,214 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf
+2025-07-23 22:28:49,139 - slide_extract.core.pdf_processor - INFO - Successfully processed 25 slides from tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf (25 with visual content, 120 total visual elements)
+2025-07-23 22:28:49,139 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:28:49,140 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 25 total slides
+2025-07-23 22:28:49,140 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-23 22:28:54,093 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (2306 chars)
+2025-07-23 22:28:54,094 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 209 chars, images: True)...
+2025-07-23 22:29:03,838 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (3142 chars)
+2025-07-23 22:29:03,842 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 421 chars, images: True)...
+2025-07-23 22:29:12,601 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (2978 chars)
+2025-07-23 22:29:12,602 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 626 chars, images: True)...
+2025-07-23 22:29:23,595 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (3806 chars)
+2025-07-23 22:29:23,598 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 783 chars, images: True)...
+2025-07-23 22:29:34,304 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (4297 chars)
+2025-07-23 22:29:34,308 - slide_extract.core.note_generator - INFO - Processed 5/25 slides
+2025-07-23 22:29:34,308 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 921 chars, images: True)...
+2025-07-23 22:29:43,751 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (3397 chars)
+2025-07-23 22:29:43,753 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 906 chars, images: True)...
+2025-07-23 22:29:51,634 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (3344 chars)
+2025-07-23 22:29:51,641 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 874 chars, images: True)...
+2025-07-23 22:29:58,515 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (2921 chars)
+2025-07-23 22:29:58,517 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 933 chars, images: True)...
+2025-07-23 22:30:08,250 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (3044 chars)
+2025-07-23 22:30:08,258 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 915 chars, images: True)...
+2025-07-23 22:30:15,813 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (3069 chars)
+2025-07-23 22:30:15,819 - slide_extract.core.note_generator - INFO - Processed 10/25 slides
+2025-07-23 22:30:15,819 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 978 chars, images: True)...
+2025-07-23 22:30:24,271 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (2444 chars)
+2025-07-23 22:30:24,274 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 925 chars, images: True)...
+2025-07-23 22:30:33,518 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (3866 chars)
+2025-07-23 22:30:33,521 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 922 chars, images: True)...
+2025-07-23 22:30:40,139 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (2249 chars)
+2025-07-23 22:30:40,141 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 826 chars, images: True)...
+2025-07-23 22:30:49,093 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (4433 chars)
+2025-07-23 22:30:49,096 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 937 chars, images: True)...
+2025-07-23 22:30:57,391 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (2648 chars)
+2025-07-23 22:30:57,394 - slide_extract.core.note_generator - INFO - Processed 15/25 slides
+2025-07-23 22:30:57,395 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 902 chars, images: True)...
+2025-07-23 22:31:03,917 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (2625 chars)
+2025-07-23 22:31:03,920 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 929 chars, images: True)...
+2025-07-23 22:31:13,100 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (3112 chars)
+2025-07-23 22:31:13,100 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 903 chars, images: True)...
+2025-07-23 22:31:28,951 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (5838 chars)
+2025-07-23 22:31:28,954 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 1069 chars, images: True)...
+2025-07-23 22:31:40,640 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (4507 chars)
+2025-07-23 22:31:40,643 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 1005 chars, images: True)...
+2025-07-23 22:31:48,012 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (2663 chars)
+2025-07-23 22:31:48,016 - slide_extract.core.note_generator - INFO - Processed 20/25 slides
+2025-07-23 22:31:48,016 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 1007 chars, images: True)...
+2025-07-23 22:31:55,814 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (2796 chars)
+2025-07-23 22:31:55,818 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 953 chars, images: True)...
+2025-07-23 22:32:02,533 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (2859 chars)
+2025-07-23 22:32:02,536 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 958 chars, images: True)...
+2025-07-23 22:32:09,177 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (2673 chars)
+2025-07-23 22:32:09,180 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 759 chars, images: True)...
+2025-07-23 22:32:20,437 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (4080 chars)
+2025-07-23 22:32:20,439 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 780 chars, images: True)...
+2025-07-23 22:32:26,618 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (2079 chars)
+2025-07-23 22:32:26,623 - slide_extract.core.note_generator - INFO - Processed 25/25 slides
+2025-07-23 22:32:26,623 - slide_extract.core.note_generator - INFO - Output validation passed: 25 slides, 81326 total characters
+2025-07-23 22:32:26,623 - slide_extract.core.note_generator - INFO - Note generation completed: 25 slides, 81326 characters
+2025-07-23 22:32:26,623 - slide_extract.core.file_manager - INFO - Written 81326 characters to tests/fixtures/sample_slide_summaries/M01_23_08_31_A_Intro_summary.md
+2025-07-23 22:32:26,623 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 22:32:26,624 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:32:26,625 - slide_extract.core.batch_processor - INFO - Generated 81326 characters for M01_23_08_31_A_Intro.pdf
+2025-07-23 22:32:26,625 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_A_Intro.pdf
+2025-07-23 22:32:26,625 - slide_extract.core.batch_processor - INFO - Processing 2/2: M01_23_08_31_B_tools.pdf
+2025-07-23 22:32:26,626 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:32:26,626 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf
+2025-07-23 22:32:29,732 - slide_extract.core.pdf_processor - INFO - Successfully processed 20 slides from tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf (20 with visual content, 111 total visual elements)
+2025-07-23 22:32:29,732 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:32:29,733 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 20 total slides
+2025-07-23 22:32:29,733 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 750 chars, images: True)...
+2025-07-23 22:32:37,681 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (2716 chars)
+2025-07-23 22:32:37,684 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 817 chars, images: True)...
+2025-07-23 22:32:50,324 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (2758 chars)
+2025-07-23 22:32:50,327 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 776 chars, images: True)...
+2025-07-23 22:33:01,884 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (4856 chars)
+2025-07-23 22:33:01,887 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 816 chars, images: True)...
+2025-07-23 22:33:12,511 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (4708 chars)
+2025-07-23 22:33:12,519 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 782 chars, images: True)...
+2025-07-23 22:33:20,149 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (3309 chars)
+2025-07-23 22:33:20,150 - slide_extract.core.note_generator - INFO - Processed 5/20 slides
+2025-07-23 22:33:20,150 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 825 chars, images: True)...
+2025-07-23 22:33:32,446 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (3291 chars)
+2025-07-23 22:33:32,448 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 823 chars, images: True)...
+2025-07-23 22:33:40,547 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (2839 chars)
+2025-07-23 22:33:40,550 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 913 chars, images: True)...
+2025-07-23 22:33:48,338 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (3241 chars)
+2025-07-23 22:33:48,342 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 917 chars, images: True)...
+2025-07-23 22:33:59,952 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (3876 chars)
+2025-07-23 22:33:59,955 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 959 chars, images: True)...
+2025-07-23 22:34:07,159 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (2924 chars)
+2025-07-23 22:34:07,162 - slide_extract.core.note_generator - INFO - Processed 10/20 slides
+2025-07-23 22:34:07,162 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 938 chars, images: True)...
+2025-07-23 22:34:13,682 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (2818 chars)
+2025-07-23 22:34:13,686 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 894 chars, images: True)...
+2025-07-23 22:34:21,677 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (2864 chars)
+2025-07-23 22:34:21,680 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 822 chars, images: True)...
+2025-07-23 22:34:29,033 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (2543 chars)
+2025-07-23 22:34:29,038 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 781 chars, images: True)...
+2025-07-23 22:34:37,030 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (2419 chars)
+2025-07-23 22:34:37,033 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 730 chars, images: True)...
+2025-07-23 22:34:46,177 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (3063 chars)
+2025-07-23 22:34:46,180 - slide_extract.core.note_generator - INFO - Processed 15/20 slides
+2025-07-23 22:34:46,181 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 678 chars, images: True)...
+2025-07-23 22:34:51,630 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (2663 chars)
+2025-07-23 22:34:51,633 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 670 chars, images: True)...
+2025-07-23 22:35:03,057 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (3287 chars)
+2025-07-23 22:35:03,060 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 690 chars, images: True)...
+2025-07-23 22:35:16,804 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (4152 chars)
+2025-07-23 22:35:16,808 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 688 chars, images: True)...
+2025-07-23 22:35:23,522 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (2748 chars)
+2025-07-23 22:35:23,526 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 667 chars, images: True)...
+2025-07-23 22:35:30,907 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (2993 chars)
+2025-07-23 22:35:30,910 - slide_extract.core.note_generator - INFO - Processed 20/20 slides
+2025-07-23 22:35:30,911 - slide_extract.core.note_generator - INFO - Output validation passed: 20 slides, 64188 total characters
+2025-07-23 22:35:30,911 - slide_extract.core.note_generator - INFO - Note generation completed: 20 slides, 64188 characters
+2025-07-23 22:35:30,911 - slide_extract.core.file_manager - INFO - Written 64188 characters to tests/fixtures/sample_slide_summaries/M01_23_08_31_B_tools_summary.md
+2025-07-23 22:35:30,911 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 22:35:30,911 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:35:30,912 - slide_extract.core.batch_processor - INFO - Generated 64188 characters for M01_23_08_31_B_tools.pdf
+2025-07-23 22:35:30,912 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_B_tools.pdf
+2025-07-23 22:35:30,912 - slide_extract.core.batch_processor - INFO - Batch processing completed in 0:06:45.703059
+2025-07-23 22:35:30,912 - slide_extract.core.batch_processor - INFO - Successfully processed: 2
+2025-07-23 22:35:30,912 - slide_extract.core.batch_processor - INFO - Errors: 0
+2025-07-23 22:35:30,912 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:35:30,912 - slide_extract.core.batch_processor - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 22:35:30,912 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:35:30,912 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 2 records
+2025-07-23 22:35:30,912 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-23 22:35:30,913 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 2}
+2025-07-23 23:29:15,515 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-23 23:29:15,516 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-23 23:29:15,517 - slide_extract.core.file_manager - INFO - Created directory: /Users/michael/Desktop/coursePrep/lectures_summary
+2025-07-23 23:29:15,517 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-23 23:29:15,518 - slide_extract.core.config_manager - INFO - Loaded configuration from config.yaml
+2025-07-23 23:29:15,519 - slide_extract.core.config_manager - INFO - Loaded API keys from /Users/michael/.slide_extract_keys.env
+2025-07-23 23:29:16,516 - slide_extract.cli.common - INFO - Testing LLM connection...
+2025-07-23 23:29:26,964 - slide_extract.core.llm_client - INFO - LLM connection test successful for google
+2025-07-23 23:29:26,967 - slide_extract.cli.common - INFO - LLM connection successful: google gemini-2.5-flash
+2025-07-23 23:29:26,967 - slide_extract.cli.batch - INFO - Processing directory: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf -> /Users/michael/Desktop/coursePrep/lectures_summary
+2025-07-23 23:29:26,967 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-23 23:29:26,970 - slide_extract.core.file_manager - INFO - Discovered 24 PDF files in /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf
+2025-07-23 23:29:26,983 - slide_extract.core.manifest_manager - INFO - Initialized manifest with 24 files
+2025-07-23 23:29:26,983 - slide_extract.core.batch_processor - INFO - Initialized new batch processing for 24 files
+2025-07-23 23:29:26,983 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:29:26,983 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 24, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 24}
+2025-07-23 23:29:26,983 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:29:26,983 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:29:26,983 - slide_extract.core.batch_processor - INFO - Processing 24 files...
+2025-07-23 23:29:26,983 - slide_extract.core.batch_processor - INFO - Processing 1/24: M01_23_08_31_A_Intro.pdf
+2025-07-23 23:29:26,983 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:29:26,984 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M01_23_08_31_A_Intro.pdf
+2025-07-23 23:29:30,820 - slide_extract.core.pdf_processor - INFO - Successfully processed 25 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M01_23_08_31_A_Intro.pdf (25 with visual content, 120 total visual elements)
+2025-07-23 23:29:30,821 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:29:30,821 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 25 total slides
+2025-07-23 23:29:30,821 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-23 23:29:39,664 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (2751 chars)
+2025-07-23 23:29:39,673 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 209 chars, images: True)...
+2025-07-23 23:29:48,092 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (2669 chars)
+2025-07-23 23:29:48,097 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 421 chars, images: True)...
+2025-07-23 23:29:55,324 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (2901 chars)
+2025-07-23 23:29:55,332 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 656 chars, images: True)...
+2025-07-23 23:30:03,829 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (3123 chars)
+2025-07-23 23:30:03,834 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 813 chars, images: True)...
+2025-07-23 23:30:10,281 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (2084 chars)
+2025-07-23 23:30:10,287 - slide_extract.core.note_generator - INFO - Processed 5/25 slides
+2025-07-23 23:30:10,288 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 918 chars, images: True)...
+2025-07-23 23:30:19,190 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (3210 chars)
+2025-07-23 23:30:19,196 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 903 chars, images: True)...
+2025-07-23 23:30:28,865 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (3611 chars)
+2025-07-23 23:30:28,868 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 859 chars, images: True)...
+2025-07-23 23:30:37,947 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (3065 chars)
+2025-07-23 23:30:37,951 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 967 chars, images: True)...
+2025-07-23 23:30:46,943 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (2711 chars)
+2025-07-23 23:30:46,945 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 949 chars, images: True)...
+2025-07-23 23:30:54,560 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (2907 chars)
+2025-07-23 23:30:54,564 - slide_extract.core.note_generator - INFO - Processed 10/25 slides
+2025-07-23 23:30:54,564 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 1045 chars, images: True)...
+2025-07-23 23:31:00,066 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (2135 chars)
+2025-07-23 23:31:00,068 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 996 chars, images: True)...
+2025-07-23 23:31:15,446 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (5101 chars)
+2025-07-23 23:31:15,449 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 1009 chars, images: True)...
+2025-07-23 23:31:23,889 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (2580 chars)
+2025-07-23 23:31:23,890 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 867 chars, images: True)...
+2025-07-23 23:31:33,030 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (4065 chars)
+2025-07-23 23:31:33,033 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 982 chars, images: True)...
+2025-07-23 23:31:43,285 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (3299 chars)
+2025-07-23 23:31:43,293 - slide_extract.core.note_generator - INFO - Processed 15/25 slides
+2025-07-23 23:31:43,295 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 951 chars, images: True)...
+2025-07-23 23:31:49,223 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (2597 chars)
+2025-07-23 23:31:49,227 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 975 chars, images: True)...
+2025-07-23 23:31:54,453 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (2525 chars)
+2025-07-23 23:31:54,457 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 949 chars, images: True)...
+2025-07-23 23:32:09,754 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (5742 chars)
+2025-07-23 23:32:09,760 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 1070 chars, images: True)...
+2025-07-23 23:32:19,630 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (3790 chars)
+2025-07-23 23:32:19,635 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 996 chars, images: True)...
+2025-07-23 23:32:26,908 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (2875 chars)
+2025-07-23 23:32:26,913 - slide_extract.core.note_generator - INFO - Processed 20/25 slides
+2025-07-23 23:32:26,913 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 981 chars, images: True)...
+2025-07-23 23:32:36,091 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (2456 chars)
+2025-07-23 23:32:36,100 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 934 chars, images: True)...
+2025-07-23 23:32:44,281 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (3385 chars)
+2025-07-23 23:32:44,288 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 924 chars, images: True)...
+2025-07-23 23:32:51,718 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (2800 chars)
+2025-07-23 23:32:51,722 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 740 chars, images: True)...
+2025-07-23 23:33:01,369 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (4352 chars)
+2025-07-23 23:33:01,372 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 753 chars, images: True)...
+2025-07-23 23:33:12,466 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (5865 chars)
+2025-07-23 23:33:12,473 - slide_extract.core.note_generator - INFO - Processed 25/25 slides
+2025-07-23 23:33:12,474 - slide_extract.core.note_generator - INFO - Output validation passed: 25 slides, 82749 total characters
+2025-07-23 23:33:12,474 - slide_extract.core.note_generator - INFO - Note generation completed: 25 slides, 82749 characters
+2025-07-23 23:33:12,476 - slide_extract.core.file_manager - INFO - Written 82749 characters to /Users/michael/Desktop/coursePrep/lectures_summary/M01_23_08_31_A_Intro_summary.md
+2025-07-23 23:33:12,476 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 23:33:12,478 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:33:12,481 - slide_extract.core.batch_processor - INFO - Generated 82749 characters for M01_23_08_31_A_Intro.pdf
+2025-07-23 23:33:12,488 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_A_Intro.pdf
+2025-07-23 23:33:12,489 - slide_extract.core.batch_processor - INFO - Processing 2/24: M01_23_08_31_B_tools.pdf
+2025-07-23 23:33:12,489 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:33:12,491 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M01_23_08_31_B_tools.pdf
+2025-07-23 23:33:15,519 - slide_extract.core.pdf_processor - INFO - Successfully processed 20 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M01_23_08_31_B_tools.pdf (20 with visual content, 111 total visual elements)
+2025-07-23 23:33:15,520 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:33:15,520 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 20 total slides
+2025-07-23 23:33:15,520 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 750 chars, images: True)...
+2025-07-23 23:33:25,628 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (3112 chars)
+2025-07-23 23:33:25,631 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 809 chars, images: True)...
+2025-07-23 23:33:31,866 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (2444 chars)
+2025-07-23 23:33:31,870 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 779 chars, images: True)...
+2025-07-23 23:33:42,939 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (3257 chars)
+2025-07-23 23:33:42,949 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 816 chars, images: True)...
+2025-07-23 23:33:53,805 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (4153 chars)
+2025-07-23 23:33:53,807 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 766 chars, images: True)...
+2025-07-23 23:34:03,831 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (3909 chars)
+2025-07-23 23:34:03,835 - slide_extract.core.note_generator - INFO - Processed 5/20 slides
+2025-07-23 23:34:03,836 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 795 chars, images: True)...
+2025-07-23 23:34:15,552 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (3229 chars)
+2025-07-23 23:34:15,556 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 793 chars, images: True)...
+2025-07-23 23:34:25,790 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (3526 chars)
+2025-07-23 23:34:25,798 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 883 chars, images: True)...
+2025-07-23 23:34:32,247 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (3191 chars)
+2025-07-23 23:34:32,251 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 887 chars, images: True)...
+2025-07-23 23:34:38,821 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (3138 chars)
+2025-07-23 23:34:38,829 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 959 chars, images: True)...
+2025-07-23 23:34:46,503 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (3087 chars)
+2025-07-23 23:34:46,509 - slide_extract.core.note_generator - INFO - Processed 10/20 slides
+2025-07-23 23:34:46,509 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 938 chars, images: True)...
+2025-07-23 23:34:54,878 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (3134 chars)
+2025-07-23 23:34:54,884 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 913 chars, images: True)...
+2025-07-23 23:35:05,174 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (2768 chars)
+2025-07-23 23:35:05,179 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 868 chars, images: True)...
+2025-07-23 23:35:12,290 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (3336 chars)
+2025-07-23 23:35:12,294 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 851 chars, images: True)...
+2025-07-23 23:35:20,756 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (2921 chars)
+2025-07-23 23:35:20,763 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 800 chars, images: True)...
+2025-07-23 23:35:26,611 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (2788 chars)
+2025-07-23 23:35:26,613 - slide_extract.core.note_generator - INFO - Processed 15/20 slides
+2025-07-23 23:35:26,613 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 748 chars, images: True)...
+2025-07-23 23:35:33,505 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (3273 chars)
+2025-07-23 23:35:33,511 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 742 chars, images: True)...
+2025-07-23 23:35:41,647 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (3214 chars)
+2025-07-23 23:35:41,650 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 770 chars, images: True)...
+2025-07-23 23:35:47,810 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (2844 chars)
+2025-07-23 23:35:47,812 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 743 chars, images: True)...
+2025-07-23 23:35:54,498 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (2659 chars)
+2025-07-23 23:35:54,502 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 753 chars, images: True)...
+2025-07-23 23:36:04,715 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (3310 chars)
+2025-07-23 23:36:04,722 - slide_extract.core.note_generator - INFO - Processed 20/20 slides
+2025-07-23 23:36:04,722 - slide_extract.core.note_generator - INFO - Output validation passed: 20 slides, 63413 total characters
+2025-07-23 23:36:04,722 - slide_extract.core.note_generator - INFO - Note generation completed: 20 slides, 63413 characters
+2025-07-23 23:36:04,724 - slide_extract.core.file_manager - INFO - Written 63413 characters to /Users/michael/Desktop/coursePrep/lectures_summary/M01_23_08_31_B_tools_summary.md
+2025-07-23 23:36:04,724 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-23 23:36:04,725 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:36:04,732 - slide_extract.core.batch_processor - INFO - Generated 63413 characters for M01_23_08_31_B_tools.pdf
+2025-07-23 23:36:04,734 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_B_tools.pdf
+2025-07-23 23:36:04,734 - slide_extract.core.batch_processor - INFO - Processing 3/24: M02_23_09_07_Data_Structures.pdf
+2025-07-23 23:36:04,735 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:36:04,735 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M02_23_09_07_Data_Structures.pdf
+2025-07-23 23:36:11,545 - slide_extract.core.pdf_processor - INFO - Successfully processed 61 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M02_23_09_07_Data_Structures.pdf (61 with visual content, 606 total visual elements)
+2025-07-23 23:36:11,545 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:36:11,546 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 61 total slides
+2025-07-23 23:36:11,546 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 903 chars, images: True)...
+2025-07-23 23:36:21,290 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (2738 chars)
+2025-07-23 23:36:21,293 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 963 chars, images: True)...
+2025-07-23 23:36:28,862 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (2465 chars)
+2025-07-23 23:36:28,868 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 923 chars, images: True)...
+2025-07-23 23:36:37,193 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (2754 chars)
+2025-07-23 23:36:37,194 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 974 chars, images: True)...
+2025-07-23 23:36:46,687 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (3238 chars)
+2025-07-23 23:36:46,689 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 986 chars, images: True)...
+2025-07-23 23:36:54,076 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (2518 chars)
+2025-07-23 23:36:54,078 - slide_extract.core.note_generator - INFO - Processed 5/61 slides
+2025-07-23 23:36:54,078 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 876 chars, images: True)...
+2025-07-23 23:37:01,021 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (3272 chars)
+2025-07-23 23:37:01,026 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 939 chars, images: True)...
+2025-07-23 23:37:08,832 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (3577 chars)
+2025-07-23 23:37:08,837 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 1071 chars, images: True)...
+2025-07-23 23:37:15,956 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (2841 chars)
+2025-07-23 23:37:15,963 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 1152 chars, images: True)...
+2025-07-23 23:37:25,249 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (3255 chars)
+2025-07-23 23:37:25,254 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 1148 chars, images: True)...
+2025-07-23 23:37:36,699 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (4590 chars)
+2025-07-23 23:37:36,709 - slide_extract.core.note_generator - INFO - Processed 10/61 slides
+2025-07-23 23:37:36,712 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 1343 chars, images: True)...
+2025-07-23 23:37:47,266 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (5143 chars)
+2025-07-23 23:37:47,272 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 1388 chars, images: True)...
+2025-07-23 23:37:56,334 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (3370 chars)
+2025-07-23 23:37:56,343 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 1286 chars, images: True)...
+2025-07-23 23:38:06,831 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (3655 chars)
+2025-07-23 23:38:06,837 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 1210 chars, images: True)...
+2025-07-23 23:38:17,587 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (4617 chars)
+2025-07-23 23:38:17,592 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 1309 chars, images: True)...
+2025-07-23 23:38:26,560 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (3597 chars)
+2025-07-23 23:38:26,565 - slide_extract.core.note_generator - INFO - Processed 15/61 slides
+2025-07-23 23:38:26,565 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 1122 chars, images: True)...
+2025-07-23 23:38:42,468 - slide_extract.core.note_generator - WARNING - Slide 16 missing sections: ['**Slide Number:**']
+2025-07-23 23:38:42,468 - slide_extract.core.note_generator - ERROR - Failed to generate analysis for slide 16: Generated content for slide 16 failed validation
+2025-07-23 23:38:42,469 - slide_extract.core.progress_manager - ERROR - Recorded error for slide 16: Generated content for slide 16 failed validation
+2025-07-23 23:38:42,469 - slide_extract.core.note_generator - ERROR - Critical error during processing: Failed to process slide 16: Generated content for slide 16 failed validation
+2025-07-23 23:38:42,469 - slide_extract.core.batch_processor - ERROR - Processing error for M02_23_09_07_Data_Structures.pdf: Failed to process slide 16: Generated content for slide 16 failed validation
+2025-07-23 23:38:42,470 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:38:42,471 - slide_extract.core.batch_processor - ERROR - ✗ Failed M02_23_09_07_Data_Structures.pdf
+2025-07-23 23:38:42,471 - slide_extract.core.batch_processor - INFO - Processing 4/24: M02b_23_09_07_Data_Libraries.pdf
+2025-07-23 23:38:42,471 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:38:42,471 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M02b_23_09_07_Data_Libraries.pdf
+2025-07-23 23:38:43,699 - slide_extract.core.pdf_processor - INFO - Successfully processed 8 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M02b_23_09_07_Data_Libraries.pdf (8 with visual content, 55 total visual elements)
+2025-07-23 23:38:43,699 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:38:43,700 - slide_extract.core.batch_processor - INFO - Resuming M02b_23_09_07_Data_Libraries.pdf from slide 16
+2025-07-23 23:38:43,700 - slide_extract.core.note_generator - INFO - Starting note generation from slide 16 of 8 total slides
+2025-07-23 23:38:43,700 - slide_extract.core.batch_processor - ERROR - Processing error for M02b_23_09_07_Data_Libraries.pdf: Output contains 0 slides, expected 8
+2025-07-23 23:38:43,700 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:38:43,701 - slide_extract.core.batch_processor - ERROR - ✗ Failed M02b_23_09_07_Data_Libraries.pdf
+2025-07-23 23:38:43,701 - slide_extract.core.batch_processor - INFO - Processing 5/24: M03A_23_09_21_Stats+Data Cleaning.pdf
+2025-07-23 23:38:43,701 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:38:43,701 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M03A_23_09_21_Stats+Data Cleaning.pdf
+2025-07-23 23:38:50,266 - slide_extract.core.pdf_processor - INFO - Successfully processed 63 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M03A_23_09_21_Stats+Data Cleaning.pdf (63 with visual content, 459 total visual elements)
+2025-07-23 23:38:50,266 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:38:50,267 - slide_extract.core.batch_processor - INFO - Resuming M03A_23_09_21_Stats+Data Cleaning.pdf from slide 16
+2025-07-23 23:38:50,267 - slide_extract.core.note_generator - INFO - Starting note generation from slide 16 of 63 total slides
+2025-07-23 23:38:50,267 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 1122 chars, images: True)...
+2025-07-23 23:39:03,156 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (3655 chars)
+2025-07-23 23:39:03,161 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 1015 chars, images: True)...
+2025-07-23 23:39:13,159 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (3478 chars)
+2025-07-23 23:39:13,164 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 1046 chars, images: True)...
+2025-07-23 23:39:20,454 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (3687 chars)
+2025-07-23 23:39:20,457 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 1196 chars, images: True)...
+2025-07-23 23:39:29,316 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (3059 chars)
+2025-07-23 23:39:29,318 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 1083 chars, images: True)...
+2025-07-23 23:39:36,683 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (3104 chars)
+2025-07-23 23:39:36,691 - slide_extract.core.note_generator - INFO - Processed 20/63 slides
+2025-07-23 23:39:36,691 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 1162 chars, images: True)...
+2025-07-23 23:39:45,339 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (2599 chars)
+2025-07-23 23:39:45,341 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 1102 chars, images: True)...
+2025-07-23 23:39:55,166 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (3183 chars)
+2025-07-23 23:39:55,167 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 1046 chars, images: True)...
+2025-07-23 23:40:03,222 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (3320 chars)
+2025-07-23 23:40:03,226 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 900 chars, images: True)...
+2025-07-23 23:40:11,520 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (3531 chars)
+2025-07-23 23:40:11,522 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 936 chars, images: True)...
+2025-07-23 23:40:18,571 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (2678 chars)
+2025-07-23 23:40:18,574 - slide_extract.core.note_generator - INFO - Processed 25/63 slides
+2025-07-23 23:40:18,574 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 26 (context: 866 chars, images: True)...
+2025-07-23 23:40:27,018 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 26 (3508 chars)
+2025-07-23 23:40:27,023 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 27 (context: 894 chars, images: True)...
+2025-07-23 23:40:41,812 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 27 (7167 chars)
+2025-07-23 23:40:41,819 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 28 (context: 902 chars, images: True)...
+2025-07-23 23:40:50,567 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 28 (2617 chars)
+2025-07-23 23:40:50,576 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 29 (context: 857 chars, images: True)...
+2025-07-23 23:40:58,968 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 29 (2939 chars)
+2025-07-23 23:40:58,973 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 30 (context: 825 chars, images: True)...
+2025-07-23 23:41:06,675 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 30 (2684 chars)
+2025-07-23 23:41:06,679 - slide_extract.core.note_generator - INFO - Processed 30/63 slides
+2025-07-23 23:41:06,679 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 31 (context: 813 chars, images: True)...
+2025-07-23 23:41:15,213 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 31 (2691 chars)
+2025-07-23 23:41:15,216 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 32 (context: 821 chars, images: True)...
+2025-07-23 23:41:27,376 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 32 (3641 chars)
+2025-07-23 23:41:27,379 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 33 (context: 840 chars, images: True)...
+2025-07-23 23:41:35,487 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 33 (3502 chars)
+2025-07-23 23:41:35,493 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 34 (context: 865 chars, images: True)...
+2025-07-23 23:41:46,648 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 34 (3368 chars)
+2025-07-23 23:41:46,653 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 35 (context: 878 chars, images: True)...
+2025-07-23 23:41:54,923 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 35 (3113 chars)
+2025-07-23 23:41:54,928 - slide_extract.core.note_generator - INFO - Processed 35/63 slides
+2025-07-23 23:41:54,928 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 36 (context: 903 chars, images: True)...
+2025-07-23 23:42:03,218 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 36 (2473 chars)
+2025-07-23 23:42:03,226 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 37 (context: 881 chars, images: True)...
+2025-07-23 23:42:11,589 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 37 (2834 chars)
+2025-07-23 23:42:11,596 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 38 (context: 866 chars, images: True)...
+2025-07-23 23:42:19,471 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 38 (3552 chars)
+2025-07-23 23:42:19,475 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 39 (context: 939 chars, images: True)...
+2025-07-23 23:42:24,725 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 39 (2763 chars)
+2025-07-23 23:42:24,728 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 40 (context: 973 chars, images: True)...
+2025-07-23 23:42:32,287 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 40 (2751 chars)
+2025-07-23 23:42:32,291 - slide_extract.core.note_generator - INFO - Processed 40/63 slides
+2025-07-23 23:42:32,291 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 41 (context: 967 chars, images: True)...
+2025-07-23 23:42:41,905 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 41 (3028 chars)
+2025-07-23 23:42:41,909 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 42 (context: 971 chars, images: True)...
+2025-07-23 23:42:52,343 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 42 (4630 chars)
+2025-07-23 23:42:52,347 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 43 (context: 1108 chars, images: True)...
+2025-07-23 23:42:59,894 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 43 (3261 chars)
+2025-07-23 23:42:59,902 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 44 (context: 1129 chars, images: True)...
+2025-07-23 23:43:07,889 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 44 (3866 chars)
+2025-07-23 23:43:07,895 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 45 (context: 1077 chars, images: True)...
+2025-07-23 23:43:13,798 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 45 (2804 chars)
+2025-07-23 23:43:13,804 - slide_extract.core.note_generator - INFO - Processed 45/63 slides
+2025-07-23 23:43:13,804 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 46 (context: 1112 chars, images: True)...
+2025-07-23 23:43:19,456 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 46 (2276 chars)
+2025-07-23 23:43:19,462 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 47 (context: 1092 chars, images: True)...
+2025-07-23 23:43:28,409 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 47 (3227 chars)
+2025-07-23 23:43:28,421 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 48 (context: 944 chars, images: True)...
+2025-07-23 23:43:34,808 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 48 (2687 chars)
+2025-07-23 23:43:34,819 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 49 (context: 928 chars, images: True)...
+2025-07-23 23:43:44,140 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 49 (3029 chars)
+2025-07-23 23:43:44,147 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 50 (context: 919 chars, images: True)...
+2025-07-23 23:43:53,469 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 50 (2806 chars)
+2025-07-23 23:43:53,481 - slide_extract.core.note_generator - INFO - Processed 50/63 slides
+2025-07-23 23:43:53,481 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 51 (context: 839 chars, images: True)...
+2025-07-23 23:43:59,931 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 51 (2814 chars)
+2025-07-23 23:43:59,943 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 52 (context: 841 chars, images: True)...
+2025-07-23 23:44:07,911 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 52 (3016 chars)
+2025-07-23 23:44:07,921 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 53 (context: 818 chars, images: True)...
+2025-07-23 23:44:17,053 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 53 (3104 chars)
+2025-07-23 23:44:17,058 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 54 (context: 704 chars, images: True)...
+2025-07-23 23:44:26,789 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 54 (3580 chars)
+2025-07-23 23:44:26,795 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 55 (context: 680 chars, images: True)...
+2025-07-23 23:44:37,433 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 55 (3810 chars)
+2025-07-23 23:44:37,443 - slide_extract.core.note_generator - INFO - Processed 55/63 slides
+2025-07-23 23:44:37,443 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 56 (context: 714 chars, images: True)...
+2025-07-23 23:44:47,393 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 56 (3486 chars)
+2025-07-23 23:44:47,397 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 57 (context: 713 chars, images: True)...
+2025-07-23 23:44:55,218 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 57 (2521 chars)
+2025-07-23 23:44:55,228 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 58 (context: 725 chars, images: True)...
+2025-07-23 23:45:05,515 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 58 (3532 chars)
+2025-07-23 23:45:05,522 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 59 (context: 733 chars, images: True)...
+2025-07-23 23:45:13,441 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 59 (3335 chars)
+2025-07-23 23:45:13,448 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 60 (context: 741 chars, images: True)...
+2025-07-23 23:45:29,968 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 60 (4961 chars)
+2025-07-23 23:45:29,971 - slide_extract.core.note_generator - INFO - Processed 60/63 slides
+2025-07-23 23:45:29,972 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 61 (context: 738 chars, images: True)...
+2025-07-23 23:45:39,533 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 61 (3958 chars)
+2025-07-23 23:45:39,537 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 62 (context: 745 chars, images: True)...
+2025-07-23 23:45:48,163 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 62 (3381 chars)
+2025-07-23 23:45:48,178 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 63 (context: 760 chars, images: True)...
+2025-07-23 23:45:56,947 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 63 (4030 chars)
+2025-07-23 23:45:56,955 - slide_extract.core.batch_processor - ERROR - Processing error for M03A_23_09_21_Stats+Data Cleaning.pdf: Output contains 48 slides, expected 63
+2025-07-23 23:45:56,956 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:45:56,961 - slide_extract.core.batch_processor - ERROR - ✗ Failed M03A_23_09_21_Stats+Data Cleaning.pdf
+2025-07-23 23:45:56,961 - slide_extract.core.batch_processor - INFO - Processing 6/24: M03B_23_09_21_Web_scraping.pdf
+2025-07-23 23:45:56,962 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:45:56,963 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M03B_23_09_21_Web_scraping.pdf
+2025-07-23 23:45:58,982 - slide_extract.core.pdf_processor - INFO - Successfully processed 15 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M03B_23_09_21_Web_scraping.pdf (15 with visual content, 56 total visual elements)
+2025-07-23 23:45:58,982 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:45:58,983 - slide_extract.core.batch_processor - INFO - Resuming M03B_23_09_21_Web_scraping.pdf from slide 64
+2025-07-23 23:45:58,983 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 15 total slides
+2025-07-23 23:45:58,983 - slide_extract.core.batch_processor - ERROR - Processing error for M03B_23_09_21_Web_scraping.pdf: Output contains 0 slides, expected 15
+2025-07-23 23:45:58,984 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:45:58,984 - slide_extract.core.batch_processor - ERROR - ✗ Failed M03B_23_09_21_Web_scraping.pdf
+2025-07-23 23:45:58,984 - slide_extract.core.batch_processor - INFO - Processing 7/24: M04_22_09_21_P2_EDA.pdf
+2025-07-23 23:45:58,984 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:45:58,984 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M04_22_09_21_P2_EDA.pdf
+2025-07-23 23:46:00,975 - slide_extract.core.pdf_processor - INFO - Successfully processed 19 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M04_22_09_21_P2_EDA.pdf (19 with visual content, 132 total visual elements)
+2025-07-23 23:46:00,976 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:00,976 - slide_extract.core.batch_processor - INFO - Resuming M04_22_09_21_P2_EDA.pdf from slide 64
+2025-07-23 23:46:00,976 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 19 total slides
+2025-07-23 23:46:00,977 - slide_extract.core.batch_processor - ERROR - Processing error for M04_22_09_21_P2_EDA.pdf: Output contains 0 slides, expected 19
+2025-07-23 23:46:00,978 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:00,978 - slide_extract.core.batch_processor - ERROR - ✗ Failed M04_22_09_21_P2_EDA.pdf
+2025-07-23 23:46:00,978 - slide_extract.core.batch_processor - INFO - Processing 8/24: M04_23_09_21_P1_Visualization.pdf
+2025-07-23 23:46:00,978 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:00,978 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M04_23_09_21_P1_Visualization.pdf
+2025-07-23 23:46:33,523 - slide_extract.core.pdf_processor - INFO - Successfully processed 54 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M04_23_09_21_P1_Visualization.pdf (54 with visual content, 391 total visual elements)
+2025-07-23 23:46:33,524 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:33,524 - slide_extract.core.batch_processor - INFO - Resuming M04_23_09_21_P1_Visualization.pdf from slide 64
+2025-07-23 23:46:33,524 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 54 total slides
+2025-07-23 23:46:33,525 - slide_extract.core.batch_processor - ERROR - Processing error for M04_23_09_21_P1_Visualization.pdf: Output contains 0 slides, expected 54
+2025-07-23 23:46:33,525 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:33,526 - slide_extract.core.batch_processor - ERROR - ✗ Failed M04_23_09_21_P1_Visualization.pdf
+2025-07-23 23:46:33,526 - slide_extract.core.batch_processor - INFO - Processing 9/24: M05_22_09_28_Storytelling_TimeSeries.pdf
+2025-07-23 23:46:33,527 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:33,527 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M05_22_09_28_Storytelling_TimeSeries.pdf
+2025-07-23 23:46:38,367 - slide_extract.core.pdf_processor - INFO - Successfully processed 45 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M05_22_09_28_Storytelling_TimeSeries.pdf (45 with visual content, 208 total visual elements)
+2025-07-23 23:46:38,367 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:38,368 - slide_extract.core.batch_processor - INFO - Resuming M05_22_09_28_Storytelling_TimeSeries.pdf from slide 64
+2025-07-23 23:46:38,368 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 45 total slides
+2025-07-23 23:46:38,369 - slide_extract.core.batch_processor - ERROR - Processing error for M05_22_09_28_Storytelling_TimeSeries.pdf: Output contains 0 slides, expected 45
+2025-07-23 23:46:38,369 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:38,369 - slide_extract.core.batch_processor - ERROR - ✗ Failed M05_22_09_28_Storytelling_TimeSeries.pdf
+2025-07-23 23:46:38,369 - slide_extract.core.batch_processor - INFO - Processing 10/24: M06-23-10-05-P2_Regression.pdf
+2025-07-23 23:46:38,369 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:38,370 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M06-23-10-05-P2_Regression.pdf
+2025-07-23 23:46:40,228 - slide_extract.core.pdf_processor - INFO - Successfully processed 23 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M06-23-10-05-P2_Regression.pdf (23 with visual content, 383 total visual elements)
+2025-07-23 23:46:40,228 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:40,228 - slide_extract.core.batch_processor - INFO - Resuming M06-23-10-05-P2_Regression.pdf from slide 64
+2025-07-23 23:46:40,229 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 23 total slides
+2025-07-23 23:46:40,229 - slide_extract.core.batch_processor - ERROR - Processing error for M06-23-10-05-P2_Regression.pdf: Output contains 0 slides, expected 23
+2025-07-23 23:46:40,229 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:40,230 - slide_extract.core.batch_processor - ERROR - ✗ Failed M06-23-10-05-P2_Regression.pdf
+2025-07-23 23:46:40,230 - slide_extract.core.batch_processor - INFO - Processing 11/24: M06_23_10_05_P1_Images.pdf
+2025-07-23 23:46:40,230 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:40,231 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M06_23_10_05_P1_Images.pdf
+2025-07-23 23:46:45,453 - slide_extract.core.pdf_processor - INFO - Successfully processed 47 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M06_23_10_05_P1_Images.pdf (47 with visual content, 1039 total visual elements)
+2025-07-23 23:46:45,453 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:45,454 - slide_extract.core.batch_processor - INFO - Resuming M06_23_10_05_P1_Images.pdf from slide 64
+2025-07-23 23:46:45,454 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 47 total slides
+2025-07-23 23:46:45,455 - slide_extract.core.batch_processor - ERROR - Processing error for M06_23_10_05_P1_Images.pdf: Output contains 0 slides, expected 47
+2025-07-23 23:46:45,455 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:45,456 - slide_extract.core.batch_processor - ERROR - ✗ Failed M06_23_10_05_P1_Images.pdf
+2025-07-23 23:46:45,456 - slide_extract.core.batch_processor - INFO - Processing 12/24: M07A_23_10_12_P2_Text.pdf
+2025-07-23 23:46:45,457 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:45,457 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M07A_23_10_12_P2_Text.pdf
+2025-07-23 23:46:48,294 - slide_extract.core.pdf_processor - INFO - Successfully processed 29 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M07A_23_10_12_P2_Text.pdf (29 with visual content, 155 total visual elements)
+2025-07-23 23:46:48,295 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:48,296 - slide_extract.core.batch_processor - INFO - Resuming M07A_23_10_12_P2_Text.pdf from slide 64
+2025-07-23 23:46:48,296 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 29 total slides
+2025-07-23 23:46:48,296 - slide_extract.core.batch_processor - ERROR - Processing error for M07A_23_10_12_P2_Text.pdf: Output contains 0 slides, expected 29
+2025-07-23 23:46:48,297 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:48,297 - slide_extract.core.batch_processor - ERROR - ✗ Failed M07A_23_10_12_P2_Text.pdf
+2025-07-23 23:46:48,297 - slide_extract.core.batch_processor - INFO - Processing 13/24: M07B-23-10-12-DimensionReductionForPreprocessing.pdf
+2025-07-23 23:46:48,298 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:48,298 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M07B-23-10-12-DimensionReductionForPreprocessing.pdf
+2025-07-23 23:46:49,904 - slide_extract.core.pdf_processor - INFO - Successfully processed 15 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M07B-23-10-12-DimensionReductionForPreprocessing.pdf (15 with visual content, 58 total visual elements)
+2025-07-23 23:46:49,905 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:49,905 - slide_extract.core.batch_processor - INFO - Resuming M07B-23-10-12-DimensionReductionForPreprocessing.pdf from slide 64
+2025-07-23 23:46:49,906 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 15 total slides
+2025-07-23 23:46:49,906 - slide_extract.core.batch_processor - ERROR - Processing error for M07B-23-10-12-DimensionReductionForPreprocessing.pdf: Output contains 0 slides, expected 15
+2025-07-23 23:46:49,906 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:49,907 - slide_extract.core.batch_processor - ERROR - ✗ Failed M07B-23-10-12-DimensionReductionForPreprocessing.pdf
+2025-07-23 23:46:49,907 - slide_extract.core.batch_processor - INFO - Processing 14/24: M07C-23-10-12-Midterm.pdf
+2025-07-23 23:46:49,907 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:49,908 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M07C-23-10-12-Midterm.pdf
+2025-07-23 23:46:50,526 - slide_extract.core.pdf_processor - INFO - Successfully processed 6 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M07C-23-10-12-Midterm.pdf (6 with visual content, 42 total visual elements)
+2025-07-23 23:46:50,527 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:50,527 - slide_extract.core.batch_processor - INFO - Resuming M07C-23-10-12-Midterm.pdf from slide 64
+2025-07-23 23:46:50,527 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 6 total slides
+2025-07-23 23:46:50,528 - slide_extract.core.batch_processor - ERROR - Processing error for M07C-23-10-12-Midterm.pdf: Output contains 0 slides, expected 6
+2025-07-23 23:46:50,528 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:50,529 - slide_extract.core.batch_processor - ERROR - ✗ Failed M07C-23-10-12-Midterm.pdf
+2025-07-23 23:46:50,529 - slide_extract.core.batch_processor - INFO - Processing 15/24: M09A_23_10_26_Bayes Classification.pdf
+2025-07-23 23:46:50,530 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:46:50,530 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M09A_23_10_26_Bayes Classification.pdf
+2025-07-23 23:47:08,597 - slide_extract.core.pdf_processor - INFO - Successfully processed 26 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M09A_23_10_26_Bayes Classification.pdf (26 with visual content, 147 total visual elements)
+2025-07-23 23:47:08,597 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:08,598 - slide_extract.core.batch_processor - INFO - Resuming M09A_23_10_26_Bayes Classification.pdf from slide 64
+2025-07-23 23:47:08,598 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 26 total slides
+2025-07-23 23:47:08,599 - slide_extract.core.batch_processor - ERROR - Processing error for M09A_23_10_26_Bayes Classification.pdf: Output contains 0 slides, expected 26
+2025-07-23 23:47:08,599 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:08,601 - slide_extract.core.batch_processor - ERROR - ✗ Failed M09A_23_10_26_Bayes Classification.pdf
+2025-07-23 23:47:08,601 - slide_extract.core.batch_processor - INFO - Processing 16/24: M09B_23_10_26_Maps.pdf
+2025-07-23 23:47:08,602 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:08,602 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M09B_23_10_26_Maps.pdf
+2025-07-23 23:47:30,968 - slide_extract.core.pdf_processor - INFO - Successfully processed 36 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M09B_23_10_26_Maps.pdf (36 with visual content, 192 total visual elements)
+2025-07-23 23:47:30,968 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:30,969 - slide_extract.core.batch_processor - INFO - Resuming M09B_23_10_26_Maps.pdf from slide 64
+2025-07-23 23:47:30,969 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 36 total slides
+2025-07-23 23:47:30,970 - slide_extract.core.batch_processor - ERROR - Processing error for M09B_23_10_26_Maps.pdf: Output contains 0 slides, expected 36
+2025-07-23 23:47:30,970 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:30,971 - slide_extract.core.batch_processor - ERROR - ✗ Failed M09B_23_10_26_Maps.pdf
+2025-07-23 23:47:30,971 - slide_extract.core.batch_processor - INFO - Processing 17/24: M10A_23_11_02_TheMLProcess_A.pdf
+2025-07-23 23:47:30,972 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:30,972 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M10A_23_11_02_TheMLProcess_A.pdf
+2025-07-23 23:47:33,985 - slide_extract.core.pdf_processor - INFO - Successfully processed 37 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M10A_23_11_02_TheMLProcess_A.pdf (37 with visual content, 213 total visual elements)
+2025-07-23 23:47:33,985 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:33,986 - slide_extract.core.batch_processor - INFO - Resuming M10A_23_11_02_TheMLProcess_A.pdf from slide 64
+2025-07-23 23:47:33,986 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 37 total slides
+2025-07-23 23:47:33,987 - slide_extract.core.batch_processor - ERROR - Processing error for M10A_23_11_02_TheMLProcess_A.pdf: Output contains 0 slides, expected 37
+2025-07-23 23:47:33,987 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:33,988 - slide_extract.core.batch_processor - ERROR - ✗ Failed M10A_23_11_02_TheMLProcess_A.pdf
+2025-07-23 23:47:33,988 - slide_extract.core.batch_processor - INFO - Processing 18/24: M10B_23_11_02_Classification_B.pdf
+2025-07-23 23:47:33,988 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:33,988 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M10B_23_11_02_Classification_B.pdf
+2025-07-23 23:47:51,278 - slide_extract.core.pdf_processor - INFO - Successfully processed 27 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M10B_23_11_02_Classification_B.pdf (27 with visual content, 150 total visual elements)
+2025-07-23 23:47:51,278 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:51,279 - slide_extract.core.batch_processor - INFO - Resuming M10B_23_11_02_Classification_B.pdf from slide 64
+2025-07-23 23:47:51,279 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 27 total slides
+2025-07-23 23:47:51,280 - slide_extract.core.batch_processor - ERROR - Processing error for M10B_23_11_02_Classification_B.pdf: Output contains 0 slides, expected 27
+2025-07-23 23:47:51,280 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:51,281 - slide_extract.core.batch_processor - ERROR - ✗ Failed M10B_23_11_02_Classification_B.pdf
+2025-07-23 23:47:51,281 - slide_extract.core.batch_processor - INFO - Processing 19/24: M11_23_11_09_Linear_Classiffiers_Clustering.pdf
+2025-07-23 23:47:51,281 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:51,282 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M11_23_11_09_Linear_Classiffiers_Clustering.pdf
+2025-07-23 23:47:55,589 - slide_extract.core.pdf_processor - INFO - Successfully processed 48 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M11_23_11_09_Linear_Classiffiers_Clustering.pdf (48 with visual content, 248 total visual elements)
+2025-07-23 23:47:55,589 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:55,590 - slide_extract.core.batch_processor - INFO - Resuming M11_23_11_09_Linear_Classiffiers_Clustering.pdf from slide 64
+2025-07-23 23:47:55,590 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 48 total slides
+2025-07-23 23:47:55,591 - slide_extract.core.batch_processor - ERROR - Processing error for M11_23_11_09_Linear_Classiffiers_Clustering.pdf: Output contains 0 slides, expected 48
+2025-07-23 23:47:55,591 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:55,592 - slide_extract.core.batch_processor - ERROR - ✗ Failed M11_23_11_09_Linear_Classiffiers_Clustering.pdf
+2025-07-23 23:47:55,592 - slide_extract.core.batch_processor - INFO - Processing 20/24: M12_23_11_16_NeuralNetworks.pdf
+2025-07-23 23:47:55,592 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:47:55,593 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M12_23_11_16_NeuralNetworks.pdf
+2025-07-23 23:48:01,291 - slide_extract.core.pdf_processor - INFO - Successfully processed 55 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M12_23_11_16_NeuralNetworks.pdf (55 with visual content, 246 total visual elements)
+2025-07-23 23:48:01,291 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:48:01,292 - slide_extract.core.batch_processor - INFO - Resuming M12_23_11_16_NeuralNetworks.pdf from slide 64
+2025-07-23 23:48:01,292 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 55 total slides
+2025-07-23 23:48:01,293 - slide_extract.core.batch_processor - ERROR - Processing error for M12_23_11_16_NeuralNetworks.pdf: Output contains 0 slides, expected 55
+2025-07-23 23:48:01,293 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:48:01,295 - slide_extract.core.batch_processor - ERROR - ✗ Failed M12_23_11_16_NeuralNetworks.pdf
+2025-07-23 23:48:01,295 - slide_extract.core.batch_processor - INFO - Processing 21/24: M13A_23_11_30-Ethical-DataScience.pdf
+2025-07-23 23:48:01,295 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:48:01,295 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M13A_23_11_30-Ethical-DataScience.pdf
+2025-07-23 23:48:13,358 - slide_extract.core.pdf_processor - INFO - Successfully processed 80 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M13A_23_11_30-Ethical-DataScience.pdf (80 with visual content, 557 total visual elements)
+2025-07-23 23:48:13,359 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:48:13,359 - slide_extract.core.batch_processor - INFO - Resuming M13A_23_11_30-Ethical-DataScience.pdf from slide 64
+2025-07-23 23:48:13,359 - slide_extract.core.note_generator - INFO - Starting note generation from slide 64 of 80 total slides
+2025-07-23 23:48:13,360 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 64 (context: 875 chars, images: True)...
+2025-07-23 23:48:23,743 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 64 (4859 chars)
+2025-07-23 23:48:23,749 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 65 (context: 976 chars, images: True)...
+2025-07-23 23:48:32,822 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 65 (5048 chars)
+2025-07-23 23:48:32,827 - slide_extract.core.note_generator - INFO - Processed 65/80 slides
+2025-07-23 23:48:32,827 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 66 (context: 1133 chars, images: True)...
+2025-07-23 23:48:41,733 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 66 (4361 chars)
+2025-07-23 23:48:41,742 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 67 (context: 1294 chars, images: True)...
+2025-07-23 23:48:52,841 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 67 (4805 chars)
+2025-07-23 23:48:52,855 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 68 (context: 1391 chars, images: True)...
+2025-07-23 23:49:06,308 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 68 (5334 chars)
+2025-07-23 23:49:06,315 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 69 (context: 1447 chars, images: True)...
+2025-07-23 23:49:15,162 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 69 (3319 chars)
+2025-07-23 23:49:15,176 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 70 (context: 1387 chars, images: True)...
+2025-07-23 23:49:27,041 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 70 (3873 chars)
+2025-07-23 23:49:27,050 - slide_extract.core.note_generator - INFO - Processed 70/80 slides
+2025-07-23 23:49:27,052 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 71 (context: 1255 chars, images: True)...
+2025-07-23 23:49:37,234 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 71 (5284 chars)
+2025-07-23 23:49:37,250 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 72 (context: 1128 chars, images: True)...
+2025-07-23 23:49:50,956 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 72 (6043 chars)
+2025-07-23 23:49:50,963 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 73 (context: 1188 chars, images: True)...
+2025-07-23 23:50:00,018 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 73 (4768 chars)
+2025-07-23 23:50:00,022 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 74 (context: 1188 chars, images: True)...
+2025-07-23 23:50:09,099 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 74 (4297 chars)
+2025-07-23 23:50:09,114 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 75 (context: 1291 chars, images: True)...
+2025-07-23 23:50:19,563 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 75 (4778 chars)
+2025-07-23 23:50:19,576 - slide_extract.core.note_generator - INFO - Processed 75/80 slides
+2025-07-23 23:50:19,577 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 76 (context: 1321 chars, images: True)...
+2025-07-23 23:50:29,736 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 76 (4539 chars)
+2025-07-23 23:50:29,758 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 77 (context: 1435 chars, images: True)...
+2025-07-23 23:50:39,016 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 77 (5036 chars)
+2025-07-23 23:50:39,024 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 78 (context: 1438 chars, images: True)...
+2025-07-23 23:50:49,111 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 78 (4788 chars)
+2025-07-23 23:50:49,128 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 79 (context: 1435 chars, images: True)...
+2025-07-23 23:50:58,810 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 79 (5588 chars)
+2025-07-23 23:50:58,849 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 80 (context: 1467 chars, images: True)...
+2025-07-23 23:51:07,500 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 80 (3968 chars)
+2025-07-23 23:51:07,505 - slide_extract.core.note_generator - INFO - Processed 80/80 slides
+2025-07-23 23:51:07,505 - slide_extract.core.batch_processor - ERROR - Processing error for M13A_23_11_30-Ethical-DataScience.pdf: Output contains 17 slides, expected 80
+2025-07-23 23:51:07,507 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:07,512 - slide_extract.core.batch_processor - ERROR - ✗ Failed M13A_23_11_30-Ethical-DataScience.pdf
+2025-07-23 23:51:07,512 - slide_extract.core.batch_processor - INFO - Processing 22/24: M13B_23_11_30-Explainability.pdf
+2025-07-23 23:51:07,513 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:07,513 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M13B_23_11_30-Explainability.pdf
+2025-07-23 23:51:09,826 - slide_extract.core.pdf_processor - INFO - Successfully processed 17 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M13B_23_11_30-Explainability.pdf (17 with visual content, 110 total visual elements)
+2025-07-23 23:51:09,826 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:09,827 - slide_extract.core.batch_processor - INFO - Resuming M13B_23_11_30-Explainability.pdf from slide 81
+2025-07-23 23:51:09,827 - slide_extract.core.note_generator - INFO - Starting note generation from slide 81 of 17 total slides
+2025-07-23 23:51:09,828 - slide_extract.core.batch_processor - ERROR - Processing error for M13B_23_11_30-Explainability.pdf: Output contains 0 slides, expected 17
+2025-07-23 23:51:09,828 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:09,828 - slide_extract.core.batch_processor - ERROR - ✗ Failed M13B_23_11_30-Explainability.pdf
+2025-07-23 23:51:09,828 - slide_extract.core.batch_processor - INFO - Processing 23/24: M14A_23_12_07_-DataEngineeringBigData.pdf
+2025-07-23 23:51:09,829 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:09,829 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M14A_23_12_07_-DataEngineeringBigData.pdf
+2025-07-23 23:51:18,899 - slide_extract.core.pdf_processor - INFO - Successfully processed 74 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M14A_23_12_07_-DataEngineeringBigData.pdf (74 with visual content, 360 total visual elements)
+2025-07-23 23:51:18,899 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:18,900 - slide_extract.core.batch_processor - INFO - Resuming M14A_23_12_07_-DataEngineeringBigData.pdf from slide 81
+2025-07-23 23:51:18,900 - slide_extract.core.note_generator - INFO - Starting note generation from slide 81 of 74 total slides
+2025-07-23 23:51:18,901 - slide_extract.core.batch_processor - ERROR - Processing error for M14A_23_12_07_-DataEngineeringBigData.pdf: Output contains 0 slides, expected 74
+2025-07-23 23:51:18,901 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:18,903 - slide_extract.core.batch_processor - ERROR - ✗ Failed M14A_23_12_07_-DataEngineeringBigData.pdf
+2025-07-23 23:51:18,903 - slide_extract.core.batch_processor - INFO - Processing 24/24: M14B_23_12_07_-DSEI102-FinalExamReview.pdf
+2025-07-23 23:51:18,903 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:18,903 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M14B_23_12_07_-DSEI102-FinalExamReview.pdf
+2025-07-23 23:51:25,704 - slide_extract.core.pdf_processor - INFO - Successfully processed 65 slides from /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf/M14B_23_12_07_-DSEI102-FinalExamReview.pdf (65 with visual content, 201 total visual elements)
+2025-07-23 23:51:25,705 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:25,706 - slide_extract.core.batch_processor - INFO - Resuming M14B_23_12_07_-DSEI102-FinalExamReview.pdf from slide 81
+2025-07-23 23:51:25,706 - slide_extract.core.note_generator - INFO - Starting note generation from slide 81 of 65 total slides
+2025-07-23 23:51:25,707 - slide_extract.core.batch_processor - ERROR - Processing error for M14B_23_12_07_-DSEI102-FinalExamReview.pdf: Output contains 0 slides, expected 65
+2025-07-23 23:51:25,707 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:25,707 - slide_extract.core.batch_processor - ERROR - ✗ Failed M14B_23_12_07_-DSEI102-FinalExamReview.pdf
+2025-07-23 23:51:25,707 - slide_extract.core.batch_processor - INFO - Batch processing completed in 0:21:58.739942
+2025-07-23 23:51:25,707 - slide_extract.core.batch_processor - INFO - Successfully processed: 2
+2025-07-23 23:51:25,707 - slide_extract.core.batch_processor - INFO - Errors: 22
+2025-07-23 23:51:25,708 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:25,708 - slide_extract.core.batch_processor - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 22, 'SKIPPED': 0, 'TOTAL': 24}
+2025-07-23 23:51:25,708 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:25,708 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-23 23:51:25,708 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-23 23:51:25,708 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 22, 'SKIPPED': 0, 'TOTAL': 24}
+2025-07-24 00:11:13,002 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-24 00:11:13,002 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-24 00:11:13,003 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-24 00:11:13,004 - slide_extract.core.config_manager - INFO - Loaded configuration from config.yaml
+2025-07-24 00:11:13,004 - slide_extract.core.config_manager - INFO - Loaded API keys from /Users/michael/.slide_extract_keys.env
+2025-07-24 00:11:13,287 - slide_extract.cli.common - INFO - Testing LLM connection...
+2025-07-24 00:11:20,928 - slide_extract.core.llm_client - INFO - LLM connection test successful for google
+2025-07-24 00:11:20,929 - slide_extract.cli.common - INFO - LLM connection successful: google gemini-2.5-flash
+2025-07-24 00:11:20,930 - slide_extract.cli.batch - INFO - Processing directory: /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf -> /Users/michael/Desktop/coursePrep/lectures_summary
+2025-07-24 00:11:20,930 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-24 00:11:20,932 - slide_extract.core.file_manager - INFO - Discovered 24 PDF files in /Users/michael/City College Dropbox/Michael Grossberg/teaching/23Fall/DSEI10200F23/lectures/pdf
+2025-07-24 00:11:20,933 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,933 - slide_extract.core.batch_processor - INFO - Resuming batch processing from existing manifest
+2025-07-24 00:11:20,933 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,935 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,935 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 22, 'SKIPPED': 0, 'TOTAL': 24}
+2025-07-24 00:11:20,936 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,936 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,936 - slide_extract.core.batch_processor - INFO - Found 22 files with previous errors
+2025-07-24 00:11:20,936 - slide_extract.core.batch_processor - INFO - All files already processed successfully
+2025-07-24 00:11:20,936 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,936 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 24 records
+2025-07-24 00:11:20,936 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-24 00:11:20,936 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 2, 'ERROR': 22, 'SKIPPED': 0, 'TOTAL': 24}
+2025-07-24 00:21:16,674 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-24 00:21:16,674 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-24 00:21:16,674 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-24 00:21:16,676 - slide_extract.core.config_manager - INFO - Loaded configuration from config.yaml
+2025-07-24 00:21:16,676 - slide_extract.core.config_manager - INFO - Loaded API keys from /Users/michael/.slide_extract_keys.env
+2025-07-24 00:21:16,937 - slide_extract.cli.common - INFO - Testing LLM connection...
+2025-07-24 00:21:23,088 - slide_extract.core.llm_client - INFO - LLM connection test successful for google
+2025-07-24 00:21:23,089 - slide_extract.cli.common - INFO - LLM connection successful: google gemini-2.5-flash
+2025-07-24 00:21:23,089 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slide_summaries -> /Users/michael/Documents/dev/slide-extract
+2025-07-24 00:21:23,089 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-24 00:21:23,090 - slide_extract.core.file_manager - INFO - Discovered 0 PDF files in tests/fixtures/sample_slide_summaries
+2025-07-24 00:21:23,090 - slide_extract.core.batch_processor - ERROR - No PDF files found to process
+2025-07-24 00:21:23,090 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-24 00:21:23,090 - slide_extract.cli.batch - INFO - Final status: {}
+2025-07-24 00:21:23,090 - slide_extract.cli.batch - ERROR - Unexpected error during batch processing: 'progress_percent'
+Traceback (most recent call last):
+  File "/Users/michael/Documents/dev/slide-extract/src/slide_extract/cli/batch.py", line 153, in main
+    print(f"Progress: {final_summary['progress_percent']:.1f}%")
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'progress_percent'
+2025-07-24 00:21:46,902 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-24 00:21:46,902 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-24 00:21:46,902 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-24 00:21:46,903 - slide_extract.core.config_manager - INFO - Loaded configuration from config.yaml
+2025-07-24 00:21:46,903 - slide_extract.core.config_manager - INFO - Loaded API keys from /Users/michael/.slide_extract_keys.env
+2025-07-24 00:21:47,104 - slide_extract.cli.common - INFO - Testing LLM connection...
+2025-07-24 00:21:57,503 - slide_extract.core.llm_client - INFO - LLM connection test successful for google
+2025-07-24 00:21:57,503 - slide_extract.cli.common - INFO - LLM connection successful: google gemini-2.5-flash
+2025-07-24 00:21:57,504 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slide_summaries -> /Users/michael/Documents/dev/slide-extract
+2025-07-24 00:21:57,504 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-24 00:21:57,505 - slide_extract.core.file_manager - INFO - Discovered 0 PDF files in tests/fixtures/sample_slide_summaries
+2025-07-24 00:21:57,506 - slide_extract.core.batch_processor - ERROR - No PDF files found to process
+2025-07-24 00:21:57,506 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-24 00:21:57,506 - slide_extract.cli.batch - INFO - Final status: {}
+2025-07-24 00:21:57,506 - slide_extract.cli.batch - ERROR - Unexpected error during batch processing: 'progress_percent'
+Traceback (most recent call last):
+  File "/Users/michael/Documents/dev/slide-extract/src/slide_extract/cli/batch.py", line 153, in main
+    print(f"Progress: {final_summary['progress_percent']:.1f}%")
+                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'progress_percent'
+2025-07-24 00:26:06,493 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-24 00:26:06,493 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-24 00:26:06,493 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-24 00:26:06,493 - slide_extract.cli.common - INFO - Running in no-AI mode (placeholder only)
+2025-07-24 00:26:06,493 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slides -> /Users/michael/Documents/dev/slide-extract
+2025-07-24 00:26:06,493 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-24 00:26:06,493 - slide_extract.core.file_manager - INFO - Discovered 4 PDF files in tests/fixtures/sample_slides
+2025-07-24 00:26:06,496 - slide_extract.core.manifest_manager - INFO - Initialized manifest with 4 files
+2025-07-24 00:26:06,496 - slide_extract.core.batch_processor - INFO - Initialized new batch processing for 4 files
+2025-07-24 00:26:06,496 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:06,497 - slide_extract.core.batch_processor - INFO - Processing summary: {'PENDING': 4, 'IN_PROGRESS': 0, 'COMPLETED': 0, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 4}
+2025-07-24 00:26:06,497 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:06,497 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:06,497 - slide_extract.core.batch_processor - INFO - Processing 4 files...
+2025-07-24 00:26:06,497 - slide_extract.core.batch_processor - INFO - Processing 1/4: M01_23_08_31_A_Intro.pdf
+2025-07-24 00:26:06,497 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:06,497 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf
+2025-07-24 00:26:10,314 - slide_extract.core.pdf_processor - INFO - Successfully processed 25 slides from tests/fixtures/sample_slides/M01_23_08_31_A_Intro.pdf (25 with visual content, 120 total visual elements)
+2025-07-24 00:26:10,315 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 25 total slides
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 0 chars, images: True)...
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (423 chars)
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 176 chars, images: True)...
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (414 chars)
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 346 chars, images: True)...
+2025-07-24 00:26:10,315 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (399 chars)
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 501 chars, images: True)...
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (360 chars)
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 617 chars, images: True)...
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (334 chars)
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - Processed 5/25 slides
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 707 chars, images: True)...
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (399 chars)
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 684 chars, images: True)...
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (388 chars)
+2025-07-24 00:26:10,316 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 657 chars, images: True)...
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (473 chars)
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 731 chars, images: True)...
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (351 chars)
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 722 chars, images: True)...
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (405 chars)
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - Processed 10/25 slides
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 794 chars, images: True)...
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (354 chars)
+2025-07-24 00:26:10,317 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 750 chars, images: True)...
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (393 chars)
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 757 chars, images: True)...
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (381 chars)
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 666 chars, images: True)...
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (466 chars)
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 782 chars, images: True)...
+2025-07-24 00:26:10,318 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (367 chars)
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - Processed 15/25 slides
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 744 chars, images: True)...
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (381 chars)
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 771 chars, images: True)...
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (358 chars)
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 736 chars, images: True)...
+2025-07-24 00:26:10,319 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (2629 chars)
+2025-07-24 00:26:10,320 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 888 chars, images: True)...
+2025-07-24 00:26:10,320 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (391 chars)
+2025-07-24 00:26:10,320 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 813 chars, images: True)...
+2025-07-24 00:26:10,320 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (366 chars)
+2025-07-24 00:26:10,321 - slide_extract.core.note_generator - INFO - Processed 20/25 slides
+2025-07-24 00:26:10,321 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 812 chars, images: True)...
+2025-07-24 00:26:10,321 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (343 chars)
+2025-07-24 00:26:10,321 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 774 chars, images: True)...
+2025-07-24 00:26:10,321 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (364 chars)
+2025-07-24 00:26:10,322 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 780 chars, images: True)...
+2025-07-24 00:26:10,322 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (350 chars)
+2025-07-24 00:26:10,322 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 597 chars, images: True)...
+2025-07-24 00:26:10,322 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (408 chars)
+2025-07-24 00:26:10,322 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 613 chars, images: True)...
+2025-07-24 00:26:10,322 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (335 chars)
+2025-07-24 00:26:10,323 - slide_extract.core.note_generator - INFO - Processed 25/25 slides
+2025-07-24 00:26:10,323 - slide_extract.core.note_generator - INFO - Output validation passed: 25 slides, 11982 total characters
+2025-07-24 00:26:10,323 - slide_extract.core.note_generator - INFO - Note generation completed: 25 slides, 11982 characters
+2025-07-24 00:26:10,323 - slide_extract.core.file_manager - INFO - Written 11982 characters to /Users/michael/Documents/dev/slide-extract/M01_23_08_31_A_Intro_summary.md
+2025-07-24 00:26:10,323 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-24 00:26:10,323 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:10,323 - slide_extract.core.batch_processor - INFO - Generated 11982 characters for M01_23_08_31_A_Intro.pdf
+2025-07-24 00:26:10,324 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_A_Intro.pdf
+2025-07-24 00:26:10,324 - slide_extract.core.batch_processor - INFO - Processing 2/4: M01_23_08_31_B_tools.pdf
+2025-07-24 00:26:10,324 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:10,325 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf
+2025-07-24 00:26:13,347 - slide_extract.core.pdf_processor - INFO - Successfully processed 20 slides from tests/fixtures/sample_slides/M01_23_08_31_B_tools.pdf (20 with visual content, 111 total visual elements)
+2025-07-24 00:26:13,347 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:13,347 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 20 total slides
+2025-07-24 00:26:13,347 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 582 chars, images: True)...
+2025-07-24 00:26:13,347 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (412 chars)
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 649 chars, images: True)...
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (342 chars)
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 626 chars, images: True)...
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (372 chars)
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 647 chars, images: True)...
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (371 chars)
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 610 chars, images: True)...
+2025-07-24 00:26:13,348 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (391 chars)
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - Processed 5/20 slides
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 665 chars, images: True)...
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (392 chars)
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 645 chars, images: True)...
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (414 chars)
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 717 chars, images: True)...
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (374 chars)
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 719 chars, images: True)...
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (411 chars)
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 758 chars, images: True)...
+2025-07-24 00:26:13,349 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (366 chars)
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - Processed 10/20 slides
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 734 chars, images: True)...
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (364 chars)
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 708 chars, images: True)...
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (366 chars)
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 661 chars, images: True)...
+2025-07-24 00:26:13,350 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (367 chars)
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 655 chars, images: True)...
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (368 chars)
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 614 chars, images: True)...
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (340 chars)
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - Processed 15/20 slides
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 588 chars, images: True)...
+2025-07-24 00:26:13,351 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (361 chars)
+2025-07-24 00:26:13,352 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 585 chars, images: True)...
+2025-07-24 00:26:13,352 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (380 chars)
+2025-07-24 00:26:13,352 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 599 chars, images: True)...
+2025-07-24 00:26:13,352 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (367 chars)
+2025-07-24 00:26:13,352 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 599 chars, images: True)...
+2025-07-24 00:26:13,352 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (373 chars)
+2025-07-24 00:26:13,353 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 604 chars, images: True)...
+2025-07-24 00:26:13,353 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (415 chars)
+2025-07-24 00:26:13,353 - slide_extract.core.note_generator - INFO - Processed 20/20 slides
+2025-07-24 00:26:13,353 - slide_extract.core.note_generator - INFO - Output validation passed: 20 slides, 7666 total characters
+2025-07-24 00:26:13,353 - slide_extract.core.note_generator - INFO - Note generation completed: 20 slides, 7666 characters
+2025-07-24 00:26:13,353 - slide_extract.core.file_manager - INFO - Written 7666 characters to /Users/michael/Documents/dev/slide-extract/M01_23_08_31_B_tools_summary.md
+2025-07-24 00:26:13,353 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-24 00:26:13,353 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:13,353 - slide_extract.core.batch_processor - INFO - Generated 7666 characters for M01_23_08_31_B_tools.pdf
+2025-07-24 00:26:13,354 - slide_extract.core.batch_processor - INFO - ✓ Completed M01_23_08_31_B_tools.pdf
+2025-07-24 00:26:13,354 - slide_extract.core.batch_processor - INFO - Processing 3/4: M02_23_09_07_Data_Structures.pdf
+2025-07-24 00:26:13,354 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:13,354 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M02_23_09_07_Data_Structures.pdf
+2025-07-24 00:26:20,156 - slide_extract.core.pdf_processor - INFO - Successfully processed 61 slides from tests/fixtures/sample_slides/M02_23_09_07_Data_Structures.pdf (61 with visual content, 606 total visual elements)
+2025-07-24 00:26:20,158 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 61 total slides
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 679 chars, images: True)...
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (421 chars)
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 737 chars, images: True)...
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (354 chars)
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 710 chars, images: True)...
+2025-07-24 00:26:20,158 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (373 chars)
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 715 chars, images: True)...
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (373 chars)
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 714 chars, images: True)...
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (354 chars)
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - Processed 5/61 slides
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 652 chars, images: True)...
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (463 chars)
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 695 chars, images: True)...
+2025-07-24 00:26:20,159 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (477 chars)
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 818 chars, images: True)...
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (464 chars)
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 9 (context: 909 chars, images: True)...
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 9 (371 chars)
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 10 (context: 907 chars, images: True)...
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 10 (657 chars)
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - Processed 10/61 slides
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 11 (context: 1087 chars, images: True)...
+2025-07-24 00:26:20,160 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 11 (662 chars)
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 12 (context: 1158 chars, images: True)...
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 12 (376 chars)
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 13 (context: 1058 chars, images: True)...
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 13 (377 chars)
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 14 (context: 972 chars, images: True)...
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 14 (481 chars)
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 15 (context: 1081 chars, images: True)...
+2025-07-24 00:26:20,161 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 15 (382 chars)
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - Processed 15/61 slides
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 16 (context: 929 chars, images: True)...
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 16 (338 chars)
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 17 (context: 734 chars, images: True)...
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 17 (338 chars)
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 18 (context: 696 chars, images: True)...
+2025-07-24 00:26:20,162 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 18 (409 chars)
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 19 (context: 728 chars, images: True)...
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 19 (410 chars)
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 20 (context: 659 chars, images: True)...
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 20 (419 chars)
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - Processed 20/61 slides
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 21 (context: 697 chars, images: True)...
+2025-07-24 00:26:20,163 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 21 (346 chars)
+2025-07-24 00:26:20,164 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 22 (context: 705 chars, images: True)...
+2025-07-24 00:26:20,164 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 22 (509 chars)
+2025-07-24 00:26:20,164 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 23 (context: 876 chars, images: True)...
+2025-07-24 00:26:20,164 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 23 (374 chars)
+2025-07-24 00:26:20,164 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 24 (context: 841 chars, images: True)...
+2025-07-24 00:26:20,164 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 24 (383 chars)
+2025-07-24 00:26:20,165 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 25 (context: 813 chars, images: True)...
+2025-07-24 00:26:20,165 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 25 (338 chars)
+2025-07-24 00:26:20,165 - slide_extract.core.note_generator - INFO - Processed 25/61 slides
+2025-07-24 00:26:20,165 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 26 (context: 732 chars, images: True)...
+2025-07-24 00:26:20,165 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 26 (422 chars)
+2025-07-24 00:26:20,166 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 27 (context: 808 chars, images: True)...
+2025-07-24 00:26:20,166 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 27 (441 chars)
+2025-07-24 00:26:20,166 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 28 (context: 740 chars, images: True)...
+2025-07-24 00:26:20,166 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 28 (594 chars)
+2025-07-24 00:26:20,166 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 29 (context: 899 chars, images: True)...
+2025-07-24 00:26:20,166 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 29 (367 chars)
+2025-07-24 00:26:20,167 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 30 (context: 883 chars, images: True)...
+2025-07-24 00:26:20,167 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 30 (338 chars)
+2025-07-24 00:26:20,167 - slide_extract.core.note_generator - INFO - Processed 30/61 slides
+2025-07-24 00:26:20,167 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 31 (context: 883 chars, images: True)...
+2025-07-24 00:26:20,167 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 31 (338 chars)
+2025-07-24 00:26:20,168 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 32 (context: 799 chars, images: True)...
+2025-07-24 00:26:20,168 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 32 (472 chars)
+2025-07-24 00:26:20,168 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 33 (context: 830 chars, images: True)...
+2025-07-24 00:26:20,168 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 33 (612 chars)
+2025-07-24 00:26:20,169 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 34 (context: 830 chars, images: True)...
+2025-07-24 00:26:20,169 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 34 (745 chars)
+2025-07-24 00:26:20,169 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 35 (context: 997 chars, images: True)...
+2025-07-24 00:26:20,169 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 35 (343 chars)
+2025-07-24 00:26:20,170 - slide_extract.core.note_generator - INFO - Processed 35/61 slides
+2025-07-24 00:26:20,170 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 36 (context: 1001 chars, images: True)...
+2025-07-24 00:26:20,170 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 36 (487 chars)
+2025-07-24 00:26:20,170 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 37 (context: 1150 chars, images: True)...
+2025-07-24 00:26:20,170 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 37 (384 chars)
+2025-07-24 00:26:20,171 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 38 (context: 1061 chars, images: True)...
+2025-07-24 00:26:20,171 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 38 (344 chars)
+2025-07-24 00:26:20,171 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 39 (context: 872 chars, images: True)...
+2025-07-24 00:26:20,171 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 39 (659 chars)
+2025-07-24 00:26:20,172 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 40 (context: 872 chars, images: True)...
+2025-07-24 00:26:20,172 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 40 (350 chars)
+2025-07-24 00:26:20,172 - slide_extract.core.note_generator - INFO - Processed 40/61 slides
+2025-07-24 00:26:20,172 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 41 (context: 879 chars, images: True)...
+2025-07-24 00:26:20,172 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 41 (408 chars)
+2025-07-24 00:26:20,173 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 42 (context: 800 chars, images: True)...
+2025-07-24 00:26:20,173 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 42 (349 chars)
+2025-07-24 00:26:20,174 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 43 (context: 765 chars, images: True)...
+2025-07-24 00:26:20,174 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 43 (360 chars)
+2025-07-24 00:26:20,174 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 44 (context: 781 chars, images: True)...
+2025-07-24 00:26:20,174 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 44 (502 chars)
+2025-07-24 00:26:20,175 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 45 (context: 750 chars, images: True)...
+2025-07-24 00:26:20,175 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 45 (358 chars)
+2025-07-24 00:26:20,175 - slide_extract.core.note_generator - INFO - Processed 45/61 slides
+2025-07-24 00:26:20,175 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 46 (context: 759 chars, images: True)...
+2025-07-24 00:26:20,175 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 46 (533 chars)
+2025-07-24 00:26:20,176 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 47 (context: 884 chars, images: True)...
+2025-07-24 00:26:20,176 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 47 (338 chars)
+2025-07-24 00:26:20,177 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 48 (context: 873 chars, images: True)...
+2025-07-24 00:26:20,177 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 48 (357 chars)
+2025-07-24 00:26:20,177 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 49 (context: 870 chars, images: True)...
+2025-07-24 00:26:20,177 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 49 (382 chars)
+2025-07-24 00:26:20,178 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 50 (context: 750 chars, images: True)...
+2025-07-24 00:26:20,178 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 50 (568 chars)
+2025-07-24 00:26:20,179 - slide_extract.core.note_generator - INFO - Processed 50/61 slides
+2025-07-24 00:26:20,179 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 51 (context: 925 chars, images: True)...
+2025-07-24 00:26:20,179 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 51 (363 chars)
+2025-07-24 00:26:20,179 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 52 (context: 754 chars, images: True)...
+2025-07-24 00:26:20,179 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 52 (435 chars)
+2025-07-24 00:26:20,180 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 53 (context: 852 chars, images: True)...
+2025-07-24 00:26:20,180 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 53 (463 chars)
+2025-07-24 00:26:20,181 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 54 (context: 958 chars, images: True)...
+2025-07-24 00:26:20,181 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 54 (373 chars)
+2025-07-24 00:26:20,181 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 55 (context: 949 chars, images: True)...
+2025-07-24 00:26:20,181 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 55 (372 chars)
+2025-07-24 00:26:20,182 - slide_extract.core.note_generator - INFO - Processed 55/61 slides
+2025-07-24 00:26:20,182 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 56 (context: 788 chars, images: True)...
+2025-07-24 00:26:20,182 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 56 (381 chars)
+2025-07-24 00:26:20,183 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 57 (context: 807 chars, images: True)...
+2025-07-24 00:26:20,183 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 57 (363 chars)
+2025-07-24 00:26:20,183 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 58 (context: 735 chars, images: True)...
+2025-07-24 00:26:20,183 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 58 (597 chars)
+2025-07-24 00:26:20,184 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 59 (context: 805 chars, images: True)...
+2025-07-24 00:26:20,184 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 59 (377 chars)
+2025-07-24 00:26:20,185 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 60 (context: 809 chars, images: True)...
+2025-07-24 00:26:20,185 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 60 (368 chars)
+2025-07-24 00:26:20,185 - slide_extract.core.note_generator - INFO - Processed 60/61 slides
+2025-07-24 00:26:20,185 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 61 (context: 805 chars, images: True)...
+2025-07-24 00:26:20,185 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 61 (347 chars)
+2025-07-24 00:26:20,186 - slide_extract.core.note_generator - INFO - Output validation passed: 61 slides, 26305 total characters
+2025-07-24 00:26:20,186 - slide_extract.core.note_generator - INFO - Note generation completed: 61 slides, 26305 characters
+2025-07-24 00:26:20,186 - slide_extract.core.file_manager - INFO - Written 26305 characters to /Users/michael/Documents/dev/slide-extract/M02_23_09_07_Data_Structures_summary.md
+2025-07-24 00:26:20,186 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-24 00:26:20,186 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:20,187 - slide_extract.core.batch_processor - INFO - Generated 26305 characters for M02_23_09_07_Data_Structures.pdf
+2025-07-24 00:26:20,187 - slide_extract.core.batch_processor - INFO - ✓ Completed M02_23_09_07_Data_Structures.pdf
+2025-07-24 00:26:20,187 - slide_extract.core.batch_processor - INFO - Processing 4/4: M02b_23_09_07_Data_Libraries.pdf
+2025-07-24 00:26:20,187 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:20,187 - slide_extract.core.pdf_processor - INFO - Processing PDF with multi-modal support: tests/fixtures/sample_slides/M02b_23_09_07_Data_Libraries.pdf
+2025-07-24 00:26:21,415 - slide_extract.core.pdf_processor - INFO - Successfully processed 8 slides from tests/fixtures/sample_slides/M02b_23_09_07_Data_Libraries.pdf (8 with visual content, 55 total visual elements)
+2025-07-24 00:26:21,416 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - Starting note generation from slide 1 of 8 total slides
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 1 (context: 771 chars, images: True)...
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 1 (428 chars)
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 2 (context: 834 chars, images: True)...
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 2 (355 chars)
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 3 (context: 655 chars, images: True)...
+2025-07-24 00:26:21,416 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 3 (355 chars)
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 4 (context: 632 chars, images: True)...
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 4 (424 chars)
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 5 (context: 687 chars, images: True)...
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 5 (454 chars)
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - Processed 5/8 slides
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 6 (context: 793 chars, images: True)...
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 6 (824 chars)
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 7 (context: 897 chars, images: True)...
+2025-07-24 00:26:21,417 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 7 (372 chars)
+2025-07-24 00:26:21,418 - slide_extract.core.note_generator - INFO - Requesting AI analysis for slide 8 (context: 914 chars, images: True)...
+2025-07-24 00:26:21,418 - slide_extract.core.note_generator - INFO - AI analysis completed for slide 8 (451 chars)
+2025-07-24 00:26:21,418 - slide_extract.core.note_generator - INFO - Output validation passed: 8 slides, 3711 total characters
+2025-07-24 00:26:21,418 - slide_extract.core.note_generator - INFO - Note generation completed: 8 slides, 3711 characters
+2025-07-24 00:26:21,418 - slide_extract.core.file_manager - INFO - Written 3711 characters to /Users/michael/Documents/dev/slide-extract/M02b_23_09_07_Data_Libraries_summary.md
+2025-07-24 00:26:21,418 - slide_extract.core.progress_manager - INFO - Cleaned up progress state file
+2025-07-24 00:26:21,418 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:21,418 - slide_extract.core.batch_processor - INFO - Generated 3711 characters for M02b_23_09_07_Data_Libraries.pdf
+2025-07-24 00:26:21,418 - slide_extract.core.batch_processor - INFO - ✓ Completed M02b_23_09_07_Data_Libraries.pdf
+2025-07-24 00:26:21,418 - slide_extract.core.batch_processor - INFO - Batch processing completed in 0:00:14.925054
+2025-07-24 00:26:21,418 - slide_extract.core.batch_processor - INFO - Successfully processed: 4
+2025-07-24 00:26:21,418 - slide_extract.core.batch_processor - INFO - Errors: 0
+2025-07-24 00:26:21,418 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:21,418 - slide_extract.core.batch_processor - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 4, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 4}
+2025-07-24 00:26:21,419 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:21,419 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:21,419 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-24 00:26:21,419 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 4, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 4}
+2025-07-24 00:26:28,166 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-24 00:26:28,166 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-24 00:26:28,166 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-24 00:26:28,166 - slide_extract.cli.common - INFO - Running in no-AI mode (placeholder only)
+2025-07-24 00:26:28,166 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slide_summaries -> /Users/michael/Documents/dev/slide-extract
+2025-07-24 00:26:28,166 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-24 00:26:28,167 - slide_extract.core.file_manager - INFO - Discovered 0 PDF files in tests/fixtures/sample_slide_summaries
+2025-07-24 00:26:28,167 - slide_extract.core.batch_processor - ERROR - No PDF files found to process
+2025-07-24 00:26:28,167 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:28,167 - slide_extract.core.manifest_manager - INFO - Loaded manifest with 4 records
+2025-07-24 00:26:28,167 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-24 00:26:28,167 - slide_extract.cli.batch - INFO - Final status: {'PENDING': 0, 'IN_PROGRESS': 0, 'COMPLETED': 4, 'ERROR': 0, 'SKIPPED': 0, 'TOTAL': 4}
+2025-07-24 00:26:33,841 - slide_extract.cli.common - INFO - Logging initialized at 20 level
+2025-07-24 00:26:33,841 - slide_extract.cli.batch - INFO - Starting batch directory processing with resume capability
+2025-07-24 00:26:33,841 - slide_extract.core.file_manager - INFO - Loaded prompt from src/slide_extract/prompts/default_prompt.md (3957 characters)
+2025-07-24 00:26:33,841 - slide_extract.cli.common - INFO - Running in no-AI mode (placeholder only)
+2025-07-24 00:26:33,841 - slide_extract.cli.batch - INFO - Processing directory: tests/fixtures/sample_slide_summaries -> /Users/michael/Documents/dev/slide-extract
+2025-07-24 00:26:33,841 - slide_extract.cli.batch - INFO - Output naming: [filename]_summary.md
+2025-07-24 00:26:33,841 - slide_extract.core.file_manager - INFO - Discovered 0 PDF files in tests/fixtures/sample_slide_summaries
+2025-07-24 00:26:33,841 - slide_extract.core.batch_processor - ERROR - No PDF files found to process
+2025-07-24 00:26:33,841 - slide_extract.cli.batch - INFO - Batch processing completed
+2025-07-24 00:26:33,841 - slide_extract.cli.batch - INFO - Final status: {}

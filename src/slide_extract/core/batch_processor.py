@@ -271,6 +271,11 @@ class BatchProcessor:
             return {
                 'total_files': 0,
                 'status_counts': {},
+                'progress_percent': 0.0,
+                'error_files': [],
+                'input_directory': str(self.input_dir),
+                'output_directory': str(self.output_dir),
+                'naming_pattern': f"{{filename}}{self.suffix}{self.extension}",
                 'message': 'No manifest found'
             }
         
