@@ -285,6 +285,233 @@ class NoteGenerator:
                    len(combined_notes), total_slides)
         
         return combined_notes
+
+    def generate_notes_for_slide_contents_resumable(
+        self, 
+        slide_contents: Dict[int, SlideContent], 
+        prompt: str,
+        progress_manager,
+        start_from_slide: int = 1
+    ) -> str:
+        """
+        Generate notes with resume capability and progress tracking.
+        
+        Args:
+            slide_contents: Dictionary of slide content
+            prompt: Generation prompt
+            progress_manager: Progress tracking manager
+            start_from_slide: Slide number to start/resume from
+            
+        Returns:
+            Generated notes string
+        """
+        logger.info(f"Starting note generation from slide {start_from_slide} of {len(slide_contents)} total slides")
+        
+        # Update progress manager with total slides
+        progress_manager.update_total_slides(len(slide_contents))
+        
+        # Load existing content if resuming
+        existing_notes = []
+        if start_from_slide > 1 and progress_manager.output_path and progress_manager.output_path.exists():
+            try:
+                with open(progress_manager.output_path, 'r') as f:
+                    existing_content = f.read()
+                    existing_notes.append(existing_content)
+                    logger.info(f"Loaded existing content ({len(existing_content)} chars)")
+            except Exception as e:
+                logger.error(f"Failed to load existing content: {e}")
+        
+        # Process slides from resume point
+        new_notes = []
+        processed_count = start_from_slide - 1
+        
+        try:
+            for slide_num in range(start_from_slide, len(slide_contents) + 1):
+                if slide_num not in slide_contents:
+                    logger.warning(f"Slide {slide_num} not found in content, skipping")
+                    continue
+                    
+                slide_content = slide_contents[slide_num]
+                
+                # Build cumulative context for this slide
+                context = self._build_context_for_slide(slide_num, max_context_chars=2000)
+                
+                logger.info(f"Requesting AI analysis for slide {slide_num} (context: {len(context)} chars, images: {slide_content.has_images})...")
+                
+                try:
+                    # Generate analysis for this slide
+                    if self.use_ai and self.llm_client:
+                        slide_analysis = self.llm_client.generate_slide_analysis(
+                            slide_content.text,
+                            prompt,
+                            slide_num,
+                            context=context,
+                            image_base64=slide_content.image_base64
+                        )
+                    else:
+                        # Fallback to placeholder
+                        slide_analysis = self._generate_placeholder_notes(
+                            slide_num, slide_content.text, prompt, slide_content
+                        )
+                    
+                    # Validate generated content
+                    if not self._validate_generated_content(slide_analysis, slide_num):
+                        raise NoteGenerationError(f"Generated content for slide {slide_num} failed validation")
+                    
+                    logger.info(f"AI analysis completed for slide {slide_num} ({len(slide_analysis)} chars)")
+                    
+                    # Format the slide analysis
+                    formatted_analysis = self._format_slide_analysis(slide_analysis, slide_num, slide_content)
+                    new_notes.append(formatted_analysis)
+                    
+                    # Update context history for next slide
+                    self._add_to_context_history(slide_num, slide_content.text, slide_analysis)
+                    
+                    # Checkpoint progress
+                    progress_manager.checkpoint_slide(slide_num, formatted_analysis, slide_content)
+                    
+                    processed_count += 1
+                    
+                    # Progress logging
+                    if processed_count % 5 == 0:
+                        logger.info(f"Processed {processed_count}/{len(slide_contents)} slides")
+                        
+                except Exception as e:
+                    logger.error(f"Failed to generate analysis for slide {slide_num}: {e}")
+                    # Save error state but continue processing
+                    progress_manager.record_slide_error(slide_num, str(e))
+                    raise NoteGenerationError(f"Failed to process slide {slide_num}: {e}")
+        
+        except KeyboardInterrupt:
+            logger.info(f"Processing interrupted by user at slide {slide_num}")
+            logger.info(f"Progress saved. Resume with same command to continue from slide {slide_num}")
+            raise
+        
+        except Exception as e:
+            logger.error(f"Critical error during processing: {e}")
+            raise
+        
+        # Combine existing and new content
+        all_notes = existing_notes + new_notes
+        final_content = "".join(all_notes)
+        
+        # Final validation
+        self._validate_complete_output(final_content, len(slide_contents))
+        
+        # Update completion statistics
+        self.stats = getattr(self, 'stats', {})
+        self.stats['notes_generated'] = len(slide_contents)
+        self.stats['total_characters'] = len(final_content)
+        
+        logger.info(f"Note generation completed: {len(slide_contents)} slides, {len(final_content)} characters")
+        
+        return final_content
+
+    def _build_context_for_slide(self, slide_num: int, max_context_chars: int = 2000) -> str:
+        """
+        Build cumulative context for a specific slide.
+        
+        Args:
+            slide_num: Current slide number
+            max_context_chars: Maximum characters for context
+            
+        Returns:
+            Formatted context string
+        """
+        if not self.cumulative_context:
+            return ""
+        
+        # Build context from recent slides, respecting character limit
+        context_parts = []
+        char_count = 0
+        
+        # Work backwards from most recent slides
+        for context_entry in reversed(self.cumulative_context):
+            if char_count + len(context_entry) > max_context_chars:
+                break
+            context_parts.insert(0, context_entry)
+            char_count += len(context_entry)
+        
+        return "\n\n".join(context_parts)
+
+    def _add_to_context_history(self, slide_number: int, slide_text: str, analysis: str) -> None:
+        """
+        Add slide summary to cumulative context.
+        
+        Args:
+            slide_number: The slide number
+            slide_text: Original slide text
+            analysis: AI-generated analysis
+        """
+        # Extract key points for context (limit length)
+        summary_lines = analysis.split('\n')[:5]  # First 5 lines as summary
+        summary = '\n'.join(summary_lines)
+        
+        context_entry = f"Slide {slide_number}: {slide_text[:200]}...\nKey points: {summary[:300]}..."
+        self.cumulative_context.append(context_entry)
+        
+        # Keep context manageable - limit to last 5 slides
+        if len(self.cumulative_context) > 5:
+            self.cumulative_context.pop(0)
+
+    def _validate_generated_content(self, content: str, slide_num: int) -> bool:
+        """Validate individual slide content meets quality standards."""
+        if len(content.strip()) < 100:  # Minimum reasonable length
+            logger.warning(f"Slide {slide_num} content too short ({len(content)} chars)")
+            return False
+        
+        # Check for required sections
+        required_sections = [
+            '**Slide Number:**',
+            '**Slide Text:**', 
+            '**Slide Images/Diagrams:**',
+            '**Slide Topics:**',
+            '**Slide Narration:**'
+        ]
+        
+        missing_sections = [section for section in required_sections if section not in content]
+        if missing_sections:
+            logger.warning(f"Slide {slide_num} missing sections: {missing_sections}")
+            return False
+        
+        # Check for reasonable narration length
+        narration_start = content.find('**Slide Narration:**')
+        if narration_start > -1:
+            narration_content = content[narration_start:].split('---')[0]
+            if len(narration_content.strip()) < 200:  # Minimum narration length
+                logger.warning(f"Slide {slide_num} narration too short")
+                return False
+        
+        return True
+
+    def _validate_complete_output(self, content: str, expected_slides: int) -> None:
+        """Validate the complete output meets quality standards."""
+        # Count slide sections
+        slide_count = content.count('**Slide Number:**')
+        if slide_count != expected_slides:
+            raise NoteGenerationError(f"Output contains {slide_count} slides, expected {expected_slides}")
+        
+        # Check overall length is reasonable
+        avg_chars_per_slide = len(content) / expected_slides
+        if avg_chars_per_slide < 500:  # Minimum average per slide
+            logger.warning(f"Average content per slide is low ({avg_chars_per_slide:.0f} chars)")
+        
+        logger.info(f"Output validation passed: {slide_count} slides, {len(content)} total characters")
+
+    def _format_slide_analysis(self, analysis: str, slide_num: int, slide_content) -> str:
+        """Format slide analysis with consistent structure."""
+        # If analysis already has proper formatting, return as-is
+        if '**Slide Number:**' in analysis:
+            return analysis + '\n---\n\n'
+        
+        # Otherwise, wrap in standard format
+        return f"""#### Slide {slide_num}
+
+{analysis}
+
+---
+
+"""
     
     def _verify_complete_processing(self, expected_slides: Dict[int, SlideContent]) -> None:
         """

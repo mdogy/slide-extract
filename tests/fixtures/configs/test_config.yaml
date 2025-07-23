@@ -1,0 +1,5 @@
+llm:
+  provider: "test"
+  model: "test-model"
+  max_tokens: 1000
+  temperature: 0.3
