@@ -1,6 +1,7 @@
 """Note generation module for creating speaker notes from slides and prompts."""
 
 import logging
+import time
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -12,6 +13,24 @@ except ImportError:
     from pdf_processor import SlideContent
 
 logger = logging.getLogger(__name__)
+
+
+def retry_on_timeout(func, max_retries=3, delay=5):
+    """Retry function on timeout errors with exponential backoff."""
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except LLMError as e:
+            error_str = str(e).lower()
+            if ('timeout' in error_str or 'deadline exceeded' in error_str or '504' in error_str) and attempt < max_retries - 1:
+                wait_time = delay * (2 ** attempt)  # Exponential backoff
+                logger.warning(f"API timeout (attempt {attempt + 1}/{max_retries}), retrying in {wait_time}s: {e}")
+                time.sleep(wait_time)
+                continue
+            else:
+                # Non-timeout error or max retries reached
+                raise
+    raise LLMError(f"Max retries ({max_retries}) exceeded")
 
 
 class NoteGenerationError(Exception):
@@ -341,12 +360,15 @@ class NoteGenerator:
                 try:
                     # Generate analysis for this slide
                     if self.use_ai and self.llm_client:
-                        slide_analysis = self.llm_client.generate_slide_analysis(
-                            slide_content.text,
-                            prompt,
-                            slide_num,
-                            context=context,
-                            image_base64=slide_content.image_base64
+                        # Use retry logic for LLM calls to handle timeouts
+                        slide_analysis = retry_on_timeout(
+                            lambda: self.llm_client.generate_slide_analysis(
+                                slide_content.text,
+                                prompt,
+                                slide_num,
+                                context=context,
+                                image_base64=slide_content.image_base64
+                            )
                         )
                     else:
                         # Fallback to placeholder
@@ -354,9 +376,61 @@ class NoteGenerator:
                             slide_num, slide_content.text, prompt, slide_content
                         )
                     
-                    # Validate generated content
+                    # Validate generated content - retry once with reformatting if validation fails
                     if not self._validate_generated_content(slide_analysis, slide_num):
-                        raise NoteGenerationError(f"Generated content for slide {slide_num} failed validation")
+                        logger.warning(f"Slide {slide_num} validation failed, attempting to reformat...")
+                        
+                        # Try to fix the content by adding missing slide number if that's the only issue
+                        if self.use_ai and self.llm_client and '**Slide Number:**' not in slide_analysis:
+                            fixed_analysis = f"**Slide Number:** {slide_num}\n\n{slide_analysis}"
+                            if self._validate_generated_content(fixed_analysis, slide_num):
+                                logger.info(f"Fixed slide {slide_num} by adding missing slide number")
+                                slide_analysis = fixed_analysis
+                            else:
+                                # Still invalid, try one retry with explicit formatting instructions
+                                try:
+                                    logger.warning(f"Retrying slide {slide_num} with explicit formatting instructions...")
+                                    reformat_prompt = f"""Please reformat this slide analysis to include ALL required sections:
+
+**Slide Number:** {slide_num}
+**Slide Text:** [the text content from the slide]
+**Slide Images/Diagrams:** [description of any visual elements]
+**Slide Topics:** [key topics covered]
+**Slide Narration:** [detailed speaker notes - minimum 200 characters]
+
+Original content to reformat:
+{slide_analysis}"""
+                                    
+                                    slide_analysis = retry_on_timeout(
+                                        lambda: self.llm_client.generate_slide_analysis(
+                                            slide_content.text,
+                                            reformat_prompt,
+                                            slide_num,
+                                            context="",
+                                            image_base64=slide_content.image_base64
+                                        )
+                                    )
+                                    
+                                    # Final validation
+                                    if not self._validate_generated_content(slide_analysis, slide_num):
+                                        logger.error(f"Slide {slide_num} still invalid after retry, using fallback")
+                                        slide_analysis = self._generate_placeholder_notes(
+                                            slide_num, slide_content.text, prompt, slide_content
+                                        )
+                                    else:
+                                        logger.info(f"Successfully reformatted slide {slide_num}")
+                                        
+                                except Exception as retry_e:
+                                    logger.error(f"Retry failed for slide {slide_num}: {retry_e}, using fallback")
+                                    slide_analysis = self._generate_placeholder_notes(
+                                        slide_num, slide_content.text, prompt, slide_content
+                                    )
+                        else:
+                            # Non-AI mode or missing other sections, use placeholder
+                            logger.warning(f"Using placeholder for slide {slide_num} due to validation failure")
+                            slide_analysis = self._generate_placeholder_notes(
+                                slide_num, slide_content.text, prompt, slide_content
+                            )
                     
                     logger.info(f"AI analysis completed for slide {slide_num} ({len(slide_analysis)} chars)")
                     

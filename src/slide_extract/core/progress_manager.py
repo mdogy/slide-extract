@@ -49,8 +49,11 @@ class ProgressManager:
                 return self.output_path.parent / f".slide_extract_progress_{self.output_path.stem}.json"
             else:
                 return Path(f".slide_extract_progress_{self.file_path.stem}.json")
-        else:  # batch mode
-            return self.output_path.parent / f".slide_dir_extract_progress.json"
+        else:  # batch mode - each file gets its own progress file
+            if self.output_path:
+                return self.output_path.parent / f".slide_extract_progress_{self.output_path.stem}.json"
+            else:
+                return Path(f".slide_extract_progress_{self.file_path.stem}.json")
     
     def has_incomplete_work(self) -> bool:
         """Check if there's resumable work from previous run."""
